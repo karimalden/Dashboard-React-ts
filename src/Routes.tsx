@@ -1,5 +1,6 @@
 import { lazy } from "react";
-import { FaHome } from "react-icons/fa";
+import { FaHome, FaUser } from "react-icons/fa";
+import Users from "./Pages/users/Users";
 
 const Home = lazy(() => import("./Pages/Home/Home"))
 
@@ -16,6 +17,12 @@ export const RoutesLinks = [
         href: "/ibrahim",
         icon: <FaHome />,
         element: <Home />
+    },
+    {
+        name: "user",
+        href: "/",
+        icon: <FaUser />,
+        element: <Users />
     }
    
 ]

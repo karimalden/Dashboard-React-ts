@@ -2,7 +2,7 @@ import { DashHeader, LyTable, AddModel, EditModel } from '../../Layout/app/Expor
 
 import { getInitialValues, getValidationSchema, getDataToSend, AddBody,useTableColumns,EditBody} from './index'
 
-const Products = () => {
+const Users = () => {
     const column: any = useTableColumns()
     const Data :any = []
     const AddMutation=()=>{}
@@ -19,4 +19,4 @@ const Products = () => {
     )
 }
 
-export default Products
+export default Users
