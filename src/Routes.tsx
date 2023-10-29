@@ -10,6 +10,12 @@ export const RoutesLinks = [
         href: "/",
         icon: <FaHome />,
         element: <Home />
+    },
+    {
+        name: "Ibrahim",
+        href: "/ibrahim",
+        icon: <FaHome />,
+        element: <Home />
     }
    
 ]
