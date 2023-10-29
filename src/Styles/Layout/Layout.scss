@@ -1,0 +1,81 @@
+
+.DashboardLayout {
+    display: flex;
+    gap: 10%;
+    color: var(--text);
+    width: 90%;
+
+    
+}
+.DashboardLayout_Body{
+    position: absolute;
+    left: 290px;
+    width: calc(98% - 290px);
+    
+}   
+.DashboardLayout_Body_Open{
+    left: 140px;
+    width: calc(98% - 140px);
+    transition: 1s ease-in-out;
+
+
+}
+.ar{
+    .DashboardLayout_Body{
+        right: 290px;
+        
+    }   
+    .DashboardLayout_Body_Open{
+        right: 140px;
+        width: calc(96% - 140px);
+        transition: 1s ease-in-out;
+    
+    
+    }
+}
+
+.card {
+    background: var(--bg);
+ @include Shadow;
+ outline: none !important;
+ border: none !important;
+}
+.Model_Button{
+    background: var(--primary);
+    outline: none;
+    border: none;
+}
+.SweetAlert{
+    .btn-primary{
+        background: var(--primary);
+        outline: none;
+        border: none;
+        box-shadow: none !important;
+    }
+}
+.TableActions{
+    svg{
+        fill: var(--primary);
+    }
+}
+.form-control:focus{
+    box-shadow:  0 0 0 0.2rem rgba(0, 0, 0, 0.2) !important;
+    border: var(--primary);
+}
+.Page_Header{
+    display: flex; align-items: center ; justify-content: space-between;
+    margin-bottom: 20px;
+
+}
+.PrimaryColor{
+    margin-inline: 10px;
+}
+
+.react-toggle-track{
+    background: red ;
+}
+
+///// spinner 
+.jwoUqQ{
+    color: var(--primary) !important;
+}

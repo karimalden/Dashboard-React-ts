@@ -1,0 +1,23 @@
+.Add_Button{
+    button {
+        border: 2px solid var(--primary);
+        background-color: var(--primary);
+        border-radius: 0.5vw;
+        padding:.5vw 1vw;
+        font-size: 1vw;
+        display: flex; justify-content: center; align-items: center;
+        box-shadow: 2px 2px 7px 0 var(--primary);
+
+       }
+       
+       button span {
+        display: flex;
+        align-items: center;
+        color: var(--bg);
+        font-weight: bold;
+       }
+       
+       button:hover {
+        background-color:var(--primary);
+       }
+}

@@ -1,0 +1,16 @@
+// Auth
+// In_Auth
+// Left_Auth
+// Right_Auth
+
+.Auth{
+    height: 100vh;
+    max-width: 100vw;
+    display: flex; justify-content: center; align-items: center;
+    flex-direction: column;
+
+    .In_Auth{
+        width: 70vw;
+
+    }
+}

@@ -1,0 +1,20 @@
+:root {
+    --primary:#7a987c;
+    --secondary : #151D41;
+    --text: black;
+    --bg: #ffffff;
+    --bg2:  #f8f8f8;
+    --shadow: rgba(0, 0, 0, 0.15);
+    --gray : rgb(160, 174, 192);
+}
+
+:root:has(.dark) {
+    --primary: rgb(0, 117, 255);;
+    --secondary : #151D41;
+    --text: white;
+    --bg: rgb(8 13 42);
+    --bg2:  rgb(26, 31, 55);
+    --shadow: rgba(0, 0, 0, 0.15);
+    --gray : rgb(160, 174, 192);
+
+}

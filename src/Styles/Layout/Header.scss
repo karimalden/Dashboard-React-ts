@@ -1,0 +1,89 @@
+.Header{
+    width: 100%;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    background: var(--bg);
+    margin-top: 20px;
+    @include Shadow;
+    border-radius: 5px;
+ .Header_Left{
+    @include Flex;
+    gap: 5px;
+    padding-inline: 5px;
+    color: var(--primary);
+    font-weight: bolder;
+   
+ }   
+}
+.Header_Menu{
+   
+    z-index: 9999999999999;
+}
+.szh-menu-button{
+    color: var(--primary);
+    background: var(--bg);
+    border: none; outline: none;
+    padding: .6vw;
+    border-radius: 5px;
+}
+
+.szh-menu__item{
+    color: var(--text);
+    background: var(--bg);
+    &:hover{
+        background: var(--bg2);
+    }
+}
+.Header_Right{
+    padding-inline: 5px;
+
+    @include Flex ;
+    .Setting{
+        
+        margin-inline: 1vw;
+        svg{
+            fill: var(--primary);
+    background: var(--bg2);
+    padding: 0.6vw;
+    border-radius: 5px;
+        }
+    }
+    .User_Pro{
+        margin-inline: 1vw;
+        @include Flex ;
+        gap: .5vw;
+    }
+}
+
+.szh-menu {
+    min-width: auto !important;
+}
+.UNK_User{
+    border-radius: 50%;
+    height: 40px;
+    aspect-ratio: auto 40 / 40;
+    width: 40px;
+
+}
+.User_info{
+    text-align: right;
+    display: flex;justify-content: center;align-items: flex-end; flex-direction: column;
+    h6,p{
+        margin-bottom: 0;
+        font-size: .8rem;
+
+    }
+    p{
+        opacity: .8;
+    }
+}
+.Translate{
+    display: flex; justify-content: center; align-items: center; margin-inline: 10px;
+    p{
+        opacity: .7;
+        margin-bottom: 0;
+    }
+}

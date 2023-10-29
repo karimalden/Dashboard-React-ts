@@ -1,0 +1,135 @@
+
+
+.SideBar {
+    display: flex;
+    flex-direction: column;
+    width: 260px;
+    height: 100%;
+    position: fixed;
+    background: var(--bg);
+    transition: .3s ease-in-out;
+@include Shadow;
+
+}
+
+.SideBar_Top {
+    @include Flex;
+    margin-block: 20px;
+    color: var(--primary);
+    z-index: 9999999;
+    img{
+        margin-inline: 70px;
+    }
+    .HamburgerMenu{
+        z-index: 999999999999999;
+        height: 30px;
+        width: 30px;
+        svg{
+            font-size: 20px;
+        }
+    }
+}
+
+.SideBar_Links {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding-inline: 15px;
+
+
+}
+
+.SideBar_Link {
+
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 90%;
+    margin-left: 5%;
+    height: 45px;
+    border-radius: 10px;
+    font-weight: normal;
+    &:hover{
+        background: var(--primary);
+        color: var(--bg);
+        border-radius: 5px;
+        box-shadow: 2px 2px 7px 0 var(--primary);
+        svg{
+          
+                background-color: var(--primary);
+                color: var(--bg);
+            
+        }
+    }
+
+    svg {
+        padding: 5px;
+        border-radius: 10px;
+        // background-color: var(--bg2);
+        color: var(--primary);
+        margin-left: 10px;
+        font-size: 30px;
+
+        &:hover{
+            background-color: var(--primary);
+            color: var(--bg);
+        }
+    }
+  
+    
+}
+.SideBar_Links_Header{
+  
+    margin-block: 10px;
+    font-size: 12px;
+    background: var(--bg2);
+    height: 50px;
+    @include Flex;
+
+    width: 100%;
+}
+.Active_SideBar_Link{
+    background: linear-gradient(118deg, #597f5c, rgba(89, 127, 92, 0.7));
+    color: var(--bg);
+    border-radius: 5px;
+    box-shadow: 2px 2px 7px 0 var(--primary);
+
+    svg {
+        background-color: transparent;
+        color: var(--bg);
+        
+    }
+}
+
+
+.DropDown_Text{
+   width: 100px;
+ text-overflow: ellipsis;
+ overflow: hidden;
+ margin-right: 30px;
+}
+
+
+.SideBar_Open{
+    width: 90px;
+    .Active_SideBar_Link,.SideBar_Link:hover{
+        width: 70%;
+    }
+    .Link_Text,.DropDown_Text,.DropDown_Svg{
+        display: none;
+    }
+   
+    .HamburgerMenu{
+        display: none;
+    }
+    .SideBar_Top{
+        cursor: pointer;
+    }
+    }
+    .DropDown_SideBar_Link{
+        background: var(--bg2);
+    }
+   
