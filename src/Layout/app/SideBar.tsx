@@ -57,20 +57,21 @@ const SideBar = () => {
             }
             else {
               return (
-                <React.Fragment key={index}>
+                <React.Fragment key={index} >
                   <div
+                  onClick={() => setIsopen(v => !v)}
                     className={Isopen ? 'SideBar_Link DropDown  DropDown_SideBar_Link' : 'SideBar_Link DropDown'}
                     key={index}
 
                   >
-                    <div onClick={() => setIsopen(v => !v)}>
+                    <div >
                     {i?.icon}
                     </div>
                     
                     <div className='DropDown_Text'>
                       {i?.name}
                     </div>
-                    <div className='DropDown_Svg' onClick={() => setIsopen(v => !v)}>
+                    <div className='DropDown_Svg' >
                      {Isopen ? <FaAngleDown /> :  <FaAngleRight />
 
                      }

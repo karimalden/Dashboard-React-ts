@@ -6,6 +6,8 @@ import Layout from './Layout/app/Layout';
 const Page404 = lazy(() => import("./Pages/Home/Page404"))
 
 const App = () => {
+
+  
   return (
     <Routes>
       <Route path="*" element={<Suspense fallback={<Loading />}> <Page404 /></Suspense>} />

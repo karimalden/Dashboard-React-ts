@@ -47,6 +47,8 @@
     display: flex;
     align-items: center;
     gap: 10px;
+    transition: .3s ease-in-out all;
+    margin-bottom: 5px;
     width: 90%;
     margin-left: 5%;
     height: 45px;
@@ -57,9 +59,11 @@
         color: var(--bg);
         border-radius: 5px;
         box-shadow: 2px 2px 7px 0 var(--primary);
+        cursor: pointer;
+        transform: scale(1.01);
         svg{
           
-                background-color: var(--primary);
+                background-color: var(--secondary);
                 color: var(--bg);
             
         }
@@ -71,6 +75,7 @@
         // background-color: var(--bg2);
         color: var(--primary);
         margin-left: 10px;
+        
         font-size: 30px;
 
         &:hover{
