@@ -20,7 +20,7 @@ export const RoutesLinks = [
     },
     {
         name: "user",
-        href: "/",
+        href: "/user",
         icon: <FaUser />,
         element: <Users />
     }

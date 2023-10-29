@@ -1,4 +1,3 @@
-'use client'
 import { SideBarLogoUrl } from './Const'
 import React, { useState } from 'react'
 import { FaAngleDown, FaAngleRight } from 'react-icons/fa';
