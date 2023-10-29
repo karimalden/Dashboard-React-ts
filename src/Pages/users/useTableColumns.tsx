@@ -1,13 +1,11 @@
 import { useMemo } from "react";
-import TableActions from "../../Components/Utils/TableActions";
 import { useModal } from "../../lib/Zustand";
-import { useDeleteDynamik } from "../../api/ApiHooks/Delet";
+import TableActions from "../../Components/Ui/TableActions";
 
 const useTableColumns = () => {
   const { setIsOpenEditModel,SetobjectToEdit } = useModal(state => state )
-  const {mutate} = useDeleteDynamik("users")
   const OnDelet = (row: any) => {
-      mutate(row?.id)
+    //   mutate(row?.id)
       
   }
   return useMemo(

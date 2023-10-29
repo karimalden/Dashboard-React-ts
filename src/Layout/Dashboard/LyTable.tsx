@@ -1,24 +1,29 @@
+
+import React, { useEffect, useState } from 'react'
 import DataTable from 'react-data-table-component';
 import { Card, CardBody, Spinner } from 'reactstrap';
-import  useTableColumns  from '../../NewLayout/DynamikColumns';
 
 const LyTable = (props:any) => {
-
-
-  const column = useTableColumns(props?.columns)
-
+  const [isMount  , setIsMount] = useState(false)
+  console.log(props?.data);
+  
+  useEffect(()=>{
+    setIsMount(true)
+  },[])
   return (
     <Card>
     <CardBody>
       {
+        isMount && 
       <DataTable
-      columns={column}
-      data={props?.GetMutation?.data}
+      
+      columns={props?.column}
+      data={props?.data}
       noDataComponent={<h6 className="my-4">{("no_records")}</h6>}
       noHeader
       pagination
       progressComponent={<Spinner />}
-      progressPending={props?.GetMutation?.isLoading}
+      
       />
     }
     </CardBody>

@@ -1,29 +1,22 @@
-import React from 'react'
-import Page from '../../NewLayout/Page'
-import { FaHome } from 'react-icons/fa'
+import { DashHeader, LyTable, AddModel, EditModel } from '../../Layout/app/Export'
 
-const users = () => {
-    const Data:any = [
-        {
-            Name : "user",
-            href : "/user",
-            Icon : <FaHome/>,
-            element:<Page/>,
+import { getInitialValues, getValidationSchema, getDataToSend, AddBody,useTableColumns,EditBody} from './index'
 
-            },
-    ]
-  return (
-  <div>
-        {
-            Data?.map((item:any,index:any)=>(
-                <div key={index}>
-                <Page />
+const Products = () => {
+    const column: any = useTableColumns()
+    const Data :any = []
+    const AddMutation=()=>{}
+    const EditMutation =()=>{}
 
-                </div>
-            ))
-        }
-  </div>
-  )
+    const Modelprops = { getInitialValues, getValidationSchema, getDataToSend ,AddMutation,EditMutation,name:""};
+    return (
+        <div className='page'>
+            <DashHeader>   Right </DashHeader>
+            <LyTable column={column} data={Data} />
+            <AddModel {...Modelprops}>  <AddBody /> </AddModel>
+            <EditModel {...Modelprops}>  <EditBody /> </EditModel>
+        </div>
+    )
 }
 
-export default users
+export default Products
