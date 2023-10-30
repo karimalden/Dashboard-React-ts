@@ -86,8 +86,11 @@
     display: flex; justify-content: center; align-items: center;
     height: 100vh;
 }
-.Translate{
+.Translate,.Theme{
     img{
         margin-inline: 6px;
     }
+}
+.szh-menu{
+    background-color: var(--bg);
 }

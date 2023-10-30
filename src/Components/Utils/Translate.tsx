@@ -1,6 +1,4 @@
 import { Menu, MenuItem, MenuButton } from '@szhsin/react-menu';
-import '@szhsin/react-menu/dist/index.css';
-import '@szhsin/react-menu/dist/transitions/slide.css';
 import { useState } from 'react';
 import { useTranslation, initReactI18next } from 'react-i18next';
 import i18n from 'i18next'; // Make sure this import is correct

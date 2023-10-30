@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next'
 import { Menu, MenuItem, MenuButton } from '@szhsin/react-menu';
 import '@szhsin/react-menu/dist/index.css';
 import '@szhsin/react-menu/dist/transitions/slide.css';
+import Theme from '../../Components/Utils/Theme';
 
 type  TUserData = 
   {username:string | null,
@@ -20,6 +21,7 @@ const Header = () => {
     <div className='Header'>
       <div className='Header_Left'> </div>
       <div className='Header_Right'>
+        <Theme/>
 <Translate/>
 <Menu menuButton={<MenuButton>
   
