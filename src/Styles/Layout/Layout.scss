@@ -79,3 +79,15 @@
 .jwoUqQ{
     color: var(--primary) !important;
 }
+.Auth{
+    background-color: var(--bg2);
+    margin: auto;
+    width:100%;
+    display: flex; justify-content: center; align-items: center;
+    height: 100vh;
+}
+.Translate{
+    img{
+        margin-inline: 6px;
+    }
+}

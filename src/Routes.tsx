@@ -25,5 +25,5 @@ export const RoutesLinks = [
         icon: <BsHexagon />,
         element: <ExamplePage />
     }
-   
+  
 ]

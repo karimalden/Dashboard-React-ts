@@ -1,0 +1,53 @@
+.Auth{
+    background: url('../../../public/Layout/LoginBg.jpg');
+    .In_Auth{
+        background-color: white;
+        display: flex;
+        justify-content: center; align-items: center;
+        gap: 30px;
+        height: 80vh;
+
+    }
+    .LoginForm{
+        display: flex; flex-direction: column;
+        .Login_Nav{
+            display: flex; justify-content: space-between ; align-items: center;
+            margin-bottom: 30px; 
+        }
+    }
+    .Left_Col,.Right_Col{
+        padding-inline: 30px;
+        display: flex;
+        justify-content: center; align-items: center;
+        height: 100%;
+    }
+    .Left_Col{
+        background-color: #edf4f4;
+
+    }
+    .Right_Col{
+
+    }
+    .img-fluid{
+        width: 30vw;
+        height: 100%;
+        
+
+
+    }
+    .Login_H4{
+        width: 90%;
+        font-size: 16px;
+    }
+    .Reserved{
+        transform:translatex(15px) translatey(44px);
+    }
+    @media screen and (max-width: 800px)  {
+        .Left_Col{
+display: none;    
+        }
+        .Login_H4{
+            text-align: center ;
+        }
+    }
+}
