@@ -1,6 +1,7 @@
 import React from "react";
 import { confirmAlert } from "react-confirm-alert";
 import SweetAlert from "react-bootstrap-sweetalert";
+import { useTranslation } from "react-i18next";
 
 export default function CustomConfirmAlert(options : any) {
   confirmAlert({
@@ -23,17 +24,18 @@ type CustomUIProps ={
 function CustomUI({ onClose, options }:CustomUIProps) {
 
 
+  const [t] = useTranslation()
   return (
     <div className="SweetAlert">
   <SweetAlert
-      title={options.title || `DELETE, Are you sure?`}
+      title={options.title || t(`delete_are_you_sure`)}
       warning
       show={true}
       showCancel
       reverseButtons
       cancelBtnBsStyle="danger"
-      confirmBtnText={options.confirmBtnText || "Yes, delete it!"}
-      cancelBtnText={options.cancelBtnText || "Cancel"}
+      confirmBtnText={options.confirmBtnText || t("yes_delete_id")}
+      cancelBtnText={options.cancelBtnText || t("cancel")}
       onConfirm={() => {
         options.onConfirm();
         onClose();

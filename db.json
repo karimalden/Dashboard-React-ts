@@ -24,14 +24,19 @@
       "id": 5,
       "name": "few",
       "email": "jfpwrej"
+    },
+    {
+      "id": 6,
+      "name": "sos",
+      "email": "fdwf"
     }
   ],
-  "users":[
+  "users": [
     {
-      "id":1,
-      "email":"admin@adamin.com",
-      "password":"password",
-      "token":"token"
+      "id": 1,
+      "email": "admin@adamin.com",
+      "password": "password",
+      "token": "token"
     }
   ]
 }

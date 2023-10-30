@@ -25,5 +25,8 @@
 "edit":"Edit",
 "ligth":"Light",
 "dark":"Dark",
+"delete_are_you_sure":"Delete Are You Sure",
+"no_revert":"no Revert",
+"yes_delete_it":"Yes Delete it",
 "":""
 }
