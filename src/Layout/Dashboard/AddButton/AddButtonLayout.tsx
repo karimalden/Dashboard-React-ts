@@ -1,13 +1,21 @@
 import React from 'react'
 import './Add_Button.scss'
-import { useModal } from '../../../lib/Zustand'
 import { useTranslation } from 'react-i18next'
+import { usePageState } from '../state'
+
+
+
 const AddButtonLayout = () => {
-    const { setIsOpenAddModel  } = useModal()
+    const { setIsOpenAddModel , setObjectToEdit } = usePageState()
     const [t] = useTranslation();
 
+
     return (
-        <div className='Add_Button' onClick={()=>setIsOpenAddModel()}>
+        <div className='Add_Button' onClick={()=>{
+            setIsOpenAddModel()
+            setObjectToEdit(null)
+
+        }}>
             <button>
                 <span>
                     <svg

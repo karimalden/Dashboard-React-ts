@@ -5,6 +5,7 @@ import DashHeader from '../../Layout/Dashboard/DashHeader'
 import LyTable from '../../Layout/Dashboard/LyTable'
 import useTableColumns from './useTableColumns'
 import EditExampleModal from './EditExampleModal'
+import AddExampleModal from './AddExampleModal'
 
 function Page() {
 
@@ -22,6 +23,7 @@ function Page() {
       
 
       <EditExampleModal />
+      <AddExampleModal />
     </DashBody>
   )
 }

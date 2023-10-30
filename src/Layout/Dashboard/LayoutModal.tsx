@@ -16,7 +16,9 @@ interface LayoutModalProps {
 }
 function LayoutModal({isAddModal , headerText , handleSubmit =()=>{} , getInitialValues  , getValidationSchema,isLoading = false ,children}:LayoutModalProps) {
 
+  
   const  {isOpenAddModel ,setIsOpenAddModel , setIsOpenEditModel ,isOpenEditModel , objectToEdit} = usePageState(state => state)
+  console.log(objectToEdit);
     const [t] = useTranslation()
     return (
     <Modal centered isOpen={isAddModal ? isOpenAddModel :isOpenEditModel} size="lg">
@@ -25,7 +27,7 @@ function LayoutModal({isAddModal , headerText , handleSubmit =()=>{} , getInitia
       </ModalHeader>
       {
         
-          (objectToEdit && !isAddModal) &&
+          (( objectToEdit != null  && isOpenEditModel) || isOpenAddModel) &&
           <Formik
           onSubmit={handleSubmit}
           initialValues={getInitialValues}
