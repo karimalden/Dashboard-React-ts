@@ -1,12 +1,12 @@
 import React from 'react'
 import LoginForm from './LoginForm';
-import Translate from '../../Components/Utils/Translate';
+import { LoginBg } from '../../Layout/app/Const';
 const Auth = () => {
 
   
   return (
-    <div className='Auth'>
-      <div className='In_Auth'>
+    <div className='Auth' style={{ background: `url(${LoginBg})` }}>
+            <div className='In_Auth'>
           <div className="Left_Col">
             <img
               src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg"
