@@ -20,5 +20,10 @@
 "username":"Username",
 "password":"Password",
 "name":"Name",
+"email":"Email",
+"cancel":"Cancel",
+"edit":"Edit",
+"ligth":"Light",
+"dark":"Dark",
 "":""
 }

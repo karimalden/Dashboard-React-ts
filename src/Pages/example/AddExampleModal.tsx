@@ -4,10 +4,12 @@ import FormExample from './FormExample'
 import { useAddExample } from '../../api/example'
 import { getDataToSend, getInitialValues, getValidationSchema } from './formUtils'
 import { QueryStatusEnum } from '../../config/QueryStatus'
+import { useTranslation } from 'react-i18next'
 
 function AddExampleModal() {
 
 
+  const [t] = useTranslation()
   const {mutate , status} = useAddExample()
   const handelSubmit = (values:any )=>{
 
@@ -23,7 +25,7 @@ function AddExampleModal() {
      getInitialValues={getInitialValues()} 
      handleSubmit={handelSubmit} 
      status={status as QueryStatusEnum}
-     headerText='Add Modal'
+     headerText={`${t('Add')} ${t('example')}`}
      
      getValidationSchema={getValidationSchema()}>
 

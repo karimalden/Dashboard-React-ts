@@ -61,7 +61,7 @@ function LayoutModal({isAddModal , headerText , handleSubmit =()=>{} , getInitia
                   color="primary"
                   isLoading={status === QueryStatusEnum.LOADING}
                 >
-                  {t(isAddModal ? "add" :"edit")}
+                  {t(isAddModal ? "Add" :"edit")}
                 </LoadingButton>
               </ModalFooter>
             </Form>
