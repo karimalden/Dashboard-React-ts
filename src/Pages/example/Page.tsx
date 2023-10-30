@@ -6,16 +6,23 @@ import LyTable from '../../Layout/Dashboard/LyTable'
 import useTableColumns from './useTableColumns'
 import EditExampleModal from './EditExampleModal'
 import AddExampleModal from './AddExampleModal'
+import { useGetAllExample } from '../../api/example'
+import { QueryStatusEnum } from '../../config/QueryStatus'
 
 function Page() {
 
     const [t] = useTranslation()
     const column   =useTableColumns()
+    const {data  ,status } = useGetAllExample()
+ 
+    
+    
   return (
-    <DashBody>
+    // Pass Status to Layout 
+    <DashBody status={status as QueryStatusEnum} >
       <DashHeader title={'Example'}></DashHeader>
       <LyTable
-        data={[{id:1}]}
+        data={data}
         isLoading={false}
         columns={column}
     />

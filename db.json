@@ -1,0 +1,24 @@
+{
+  "example": [
+    {
+      "id": 1,
+      "name": "ibrahim",
+      "email": "ibrahim@gmail.com"
+    },
+    {
+      "id": 2,
+      "name": "gregr",
+      "email": "ibrahimgmail.com"
+    },
+    {
+      "id": 3,
+      "name": "mhmad",
+      "email": "mhmad@gmial.com"
+    },
+    {
+      "id": 4,
+      "name": "soso",
+      "email": "soso@gmail.com"
+    }
+  ]
+}

@@ -1,20 +1,33 @@
 import React from 'react'
 import LayoutModal from '../../Layout/Dashboard/LayoutModal'
+import FormExample from './FormExample'
+import { useAddExample } from '../../api/example'
+import { getDataToSend, getInitialValues, getValidationSchema } from './formUtils'
+import { QueryStatusEnum } from '../../config/QueryStatus'
 
 function AddExampleModal() {
+
+
+  const {mutate , status} = useAddExample()
+  const handelSubmit = (values:any )=>{
+
+    const dataToSend = getDataToSend(values)
+
+    mutate(values)
+    // Submit Value
+  }
   return (
     <LayoutModal
+    
      isAddModal={true}
-     getInitialValues={{}} 
-     handleSubmit={() => { }} 
-     isLoading={false}
+     getInitialValues={getInitialValues()} 
+     handleSubmit={handelSubmit} 
+     status={status as QueryStatusEnum}
      headerText='Add Modal'
      
-     getValidationSchema={{}}>
+     getValidationSchema={getValidationSchema()}>
 
-    <div>
-      hello
-    </div>
+    <FormExample />
   </LayoutModal>
   )
 }

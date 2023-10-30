@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { BaseURL } from '../../Layout/app/Const'
+import { BaseURL } from '../config'
 function useAxios() {
   return (
     axios.create({

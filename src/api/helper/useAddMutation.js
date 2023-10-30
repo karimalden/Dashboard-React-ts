@@ -1,9 +1,12 @@
-import { useMutation } from 'react-query'
+import { useMutation, useQueryClient } from 'react-query'
 import { toast } from 'react-toastify'
 import useAxios from './useAxios'
+import { useTranslation } from 'react-i18next'
 
-function useAddMutation(url) {
+function useAddMutation(key , url) {
     const axios = useAxios()
+    const [t] = useTranslation() 
+    const queryClient = useQueryClient()
   return (
     useMutation(
         async (dataToSend)=>{
@@ -13,10 +16,12 @@ function useAddMutation(url) {
         {
             onSuccess:({message})=>{
            
-                toast.success("Add Successful")
+                queryClient.invalidateQueries([key]);
+                toast.success(message || "Add Successful")
             },
             onError:({response})=>{
-                toast.error(response.data.slice(7, 36));
+                const message = response?.data?.message || t("failed_to_add_data");
+                toast.error(message);
             }
         }
     )

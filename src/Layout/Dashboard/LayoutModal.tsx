@@ -1,9 +1,10 @@
 import { Form, Formik } from 'formik'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Button, Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap'
 import { usePageState } from './state'
 import { useTranslation } from 'react-i18next';
 import { LoadingButton } from '../../Components/Ui/LoadingButton';
+import { QueryStatusEnum } from '../../config/QueryStatus';
 
 interface LayoutModalProps {
   isAddModal: boolean;
@@ -13,12 +14,20 @@ interface LayoutModalProps {
   getValidationSchema: any;
   isLoading?: boolean;
   children: React.ReactNode;
+  status?:QueryStatusEnum
 }
-function LayoutModal({isAddModal , headerText , handleSubmit =()=>{} , getInitialValues  , getValidationSchema,isLoading = false ,children}:LayoutModalProps) {
+function LayoutModal({isAddModal , headerText , handleSubmit =()=>{} , getInitialValues  , getValidationSchema,status ,children}:LayoutModalProps) {
 
   
-  const  {isOpenAddModel ,setIsOpenAddModel , setIsOpenEditModel ,isOpenEditModel , objectToEdit} = usePageState(state => state)
-  console.log(objectToEdit);
+
+  const  {isOpenAddModel ,setIsOpenAddModel , setIsOpenEditModel ,isOpenEditModel , objectToEdit , CloseAllModal} = usePageState(state => state)
+
+
+    useEffect(()=>{
+      if(status === QueryStatusEnum.SUCCESS){
+          CloseAllModal()
+      }
+    },[status])
     const [t] = useTranslation()
     return (
     <Modal centered isOpen={isAddModal ? isOpenAddModel :isOpenEditModel} size="lg">
@@ -41,7 +50,7 @@ function LayoutModal({isAddModal , headerText , handleSubmit =()=>{} , getInitia
               </ModalBody>
               <ModalFooter>
                 <Button
-                  disabled={isLoading}
+                  disabled={status === QueryStatusEnum.LOADING}
                   onClick={() => isAddModal ?setIsOpenAddModel() : setIsOpenEditModel()}
                   color="danger"
                 >
@@ -50,7 +59,7 @@ function LayoutModal({isAddModal , headerText , handleSubmit =()=>{} , getInitia
                 <LoadingButton
                   type="submit"
                   color="primary"
-                  isLoading={isLoading}
+                  isLoading={status === QueryStatusEnum.LOADING}
                 >
                   {t(isAddModal ? "add" :"edit")}
                 </LoadingButton>
