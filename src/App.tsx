@@ -4,7 +4,7 @@ import Loading from './Components/Utils/Loading/Loading';
 import { RoutesLinks } from './Routes';
 import Layout from './Layout/app/Layout';
 import Auth from './Pages/Auth/Page';
-const Page404 = lazy(() => import("./Pages/Home/Page404"))
+const Page404 = lazy(() => import("./Layout/app/NotFoundPage"))
 
 const App = () => {
 

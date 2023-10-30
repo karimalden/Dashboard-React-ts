@@ -12,6 +12,12 @@ const LoginForm = () => {
   const navigate = useNavigate()
 
   
+  const handelSubmit = (values:any)=>{
+
+    // Implemnt Your Auth Code 
+    localStorage.setItem(TOKEN_KEY, "fake")
+    navigate('/', { replace: true })
+  }
   return (
     <div className='LoginForm'>
       <nav className='Login_Nav'>
@@ -20,15 +26,7 @@ const LoginForm = () => {
       </nav>
       <Formik
         initialValues={{ username: '', password: '' }}
-        onSubmit={(values) => {
-
-
-          localStorage.setItem(TOKEN_KEY, "fake")
-          navigate('/', { replace: true })
-        }
-
-
-        }
+        onSubmit={handelSubmit}
       >
         <Form>
           <div className='form-outline mb-4'>

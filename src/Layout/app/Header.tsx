@@ -6,6 +6,8 @@ import { Menu, MenuItem, MenuButton } from '@szhsin/react-menu';
 import '@szhsin/react-menu/dist/index.css';
 import '@szhsin/react-menu/dist/transitions/slide.css';
 import Theme from '../../Components/Utils/Theme';
+import { TOKEN_KEY } from '../../config/AppKey';
+import { useNavigate } from 'react-router-dom';
 
 type  TUserData = 
   {username:string | null,
@@ -14,9 +16,17 @@ type  TUserData =
 
 
 const Header = () => {  
+
+  
  const UserData:TUserData = {username:null,is_super_user:0}
  const [t] = useTranslation();
+ const navigate = useNavigate()
 
+ const handelClick = ()=>{
+
+  localStorage.removeItem(TOKEN_KEY)
+  navigate('/auth' , {replace:true})
+ }
   return (  
     <div className='Header'>
       <div className='Header_Left'> </div>
@@ -34,7 +44,7 @@ const Header = () => {
 
         </div>
 </MenuButton>} transition>
-      <MenuItem>{t("Log Out")}</MenuItem>
+      <MenuItem onClick={handelClick}>{t("Log Out")}</MenuItem>
       
     </Menu>
     

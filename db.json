@@ -19,6 +19,19 @@
       "id": 4,
       "name": "soso",
       "email": "soso@gmail.com"
+    },
+    {
+      "id": 5,
+      "name": "few",
+      "email": "jfpwrej"
+    }
+  ],
+  "users":[
+    {
+      "id":1,
+      "email":"admin@adamin.com",
+      "password":"password",
+      "token":"token"
     }
   ]
 }

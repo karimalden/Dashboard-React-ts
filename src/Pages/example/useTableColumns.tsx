@@ -23,8 +23,12 @@ const useTableColumns :any = () => {
         center: true,
         cell: (row) => (
             <Actions
+
+            // importnat to return the row in on Edit Function to store in objectToEdit That Upper in Edit Modal 
               onEdit={() => row}
+              
               showEdit={true}
+              // showDelete={false}
               onDelete={() => fnDelete({ id: row.id })}
             />
         ),
