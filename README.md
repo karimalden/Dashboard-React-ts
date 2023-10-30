@@ -5,9 +5,11 @@ Open Source Dashboard is a comprehensive data visualization tool designed for tr
 
 To install  Dashboard in your project, follow these simple steps:
     /* node version 18 is using  */
-1. Install the required dependencies using  pnpm :
-2. run command pnpm install 
-3. run pnpm start 
+1. install json server by run npm i -g json-server 
+2. run json server =>   json-server --watch db.json
+2.  Install the required dependencies using  pnpm by run command pnpm install 
+3. run pnpm start  
+4. visit http://localhost:3333
 
 
 ## Components
@@ -45,9 +47,11 @@ Dashboard  is multilingual, thanks to the integration of react-i18next. Make the
 
 Explore the examples below to understand how to implement these features in your dashboard:
 
-- [Example 1]: Creating a dynamic dashboard with real-time data visualization.
-- [Example 2]: Implementing multilingual support using react-i18next.
-
+1. create folder in pages  
+2. add the page in Router.tsx  with the path and icon => use lazy loadaing are very important  
+3. add your custom form for modal 
+4. write some inital value and validate schema for your input in formUtils file   
+5. write your handel Submit Function  with Your position
 
 
 ## Contact
@@ -56,4 +60,4 @@ For any queries or support, feel free to reach out to our team at karimaldenlibr
 
 ## Conclusion
 
-We hope this documentation helps you make the most of DashboardX  Feel free to explore the full range of features and customize the dashboard to meet your specific requirements.
+We hope this documentation helps you make the most of Dashboard  Feel free to explore the full range of features and customize the dashboard to meet your specific requirements.
