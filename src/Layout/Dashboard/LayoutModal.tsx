@@ -30,8 +30,8 @@ function LayoutModal({isAddModal , headerText , handleSubmit =()=>{} , getInitia
     },[status])
     const [t] = useTranslation()
     return (
-    <Modal centered isOpen={isAddModal ? isOpenAddModel :isOpenEditModel} size="lg">
-      <ModalHeader toggle={() => isAddModal ?setIsOpenAddModel() : setIsOpenEditModel()}>
+    <Modal centered isOpen={isAddModal ? isOpenAddModel :isOpenEditModel} size="lg" >
+      <ModalHeader toggle={() => isAddModal ?setIsOpenAddModel() : setIsOpenEditModel()} >
         {t(headerText)}
       </ModalHeader>
       {

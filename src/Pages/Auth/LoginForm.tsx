@@ -36,11 +36,14 @@ const LoginForm = () => {
             <label className='form-label' htmlFor='username'>
               {t("Username")}
             </label>
+            
             <Field
+              placeholder={t('username')}
               as='input'
               type='text'
               id='username'
               name='username'
+              
               className='form-control form-control-lg'
             />
           </div>
@@ -50,6 +53,7 @@ const LoginForm = () => {
               {t("Password")}
             </label>
             <Field
+            placeholder={t('password')}
               as='input'
               type='password'
               id='password'

@@ -17,5 +17,8 @@
 "Log Out" : "Log Out" ,
 "Example":"Example",
 "Add":"Add",
+"username":"Username",
+"password":"Password",
+"name":"Name",
 "":""
 }
