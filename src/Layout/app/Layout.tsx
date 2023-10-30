@@ -19,7 +19,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
     }
   },[])
   return (
-    <QueryProvider>
+    <>
     <div className="DashboardLayout">
 
     <SideBar/>
@@ -33,7 +33,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
     </div>
     
     </div>
-    </QueryProvider>
+    </>
   )
 }
 
