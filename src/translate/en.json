@@ -8,5 +8,11 @@
     "Username":"Username",    
     "Password":"Password",
     "Sign in":"Sign in",
-    "Karim aldeen © 2022 | All Rights Reserved":"Karim aldeen © 2022 | All Rights Reserved"
+    "Karim aldeen © 2022 | All Rights Reserved":"Karim aldeen © 2022 | All Rights Reserved",
+    "unknown":"unknown",
+"super admin":"super admin",
+"admin":"admin",
+"Home":"Home",
+"example":"example",
+"":""
 }

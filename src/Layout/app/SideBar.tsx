@@ -5,6 +5,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { Link } from "react-router-dom";
 import { useLocation } from 'react-router-dom';
 import { RoutesLinks } from '../../Routes';
+import { useTranslation } from 'react-i18next';
 
 const SideBar = () => {
   const {pathname} = useLocation();
@@ -20,7 +21,8 @@ const SideBar = () => {
         document.getElementById("DashboardLayout_Body")?.classList.remove("DashboardLayout_Body_Open")
 
         }
-  
+        const [t] = useTranslation();
+
 
   return (
     <div className={IsopenSide ? "SideBar SideBar_Open" : 'SideBar'}>
@@ -47,7 +49,7 @@ const SideBar = () => {
                   >
                     {i?.icon}
                     <div className='Link_Text'>
-                      {(`${i?.name}`)}
+                      {t(`${i?.name}`)}
 
                     </div>
                   </Link>
@@ -68,7 +70,8 @@ const SideBar = () => {
                     </div>
                     
                     <div className='DropDown_Text'>
-                      {i?.name}
+                      {t(`${i?.name}`)}
+
                     </div>
                     <div className='DropDown_Svg' >
                      {Isopen ? <FaAngleDown /> :  <FaAngleRight />
@@ -89,7 +92,7 @@ const SideBar = () => {
                             >
                               {i?.icon}
                               <div className='Link_Text'>
-                                {i?.name}
+                              {t(`${i?.name}`)}
 
                               </div>
                             </Link>
