@@ -48,11 +48,12 @@
     transition: .3s ease-in-out all;
     margin-bottom: 5px;
     width: 90%;
-    margin-inline: 5%;
     height: 45px;
     border-radius: 10px;
     margin-bottom: 10px;
     font-weight: normal;
+    margin-left: 15px;
+
     &:hover{
         background: var(--primary);
         color: var(--bg);
@@ -62,7 +63,7 @@
         transform: scale(1.01);
         svg{
           
-                background-color: var(--secondary);
+                // background-color: var(--secondary);
                 color: var(--bg);
             
         }
@@ -85,6 +86,22 @@
   
     
 }
+.ar{
+    .SideBar_Link{
+        margin-right: 15px !important;
+        margin-left: 0px !important;
+        svg {
+         
+            margin-right: 10px;
+            margin-left: 0px !important;
+
+        
+        }
+        
+
+    }
+}
+
 .SideBar_Links_Header{
   
     margin-block: 10px;
@@ -120,7 +137,7 @@
 .SideBar_Open{
     width: 90px;
     .Active_SideBar_Link,.SideBar_Link:hover{
-        width: 70%;
+        width: 60%;
     }
     .Link_Text,.DropDown_Text,.DropDown_Svg{
         display: none;

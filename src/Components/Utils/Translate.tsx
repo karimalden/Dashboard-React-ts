@@ -46,7 +46,7 @@ export default function Translate() {
     }
     else  if(newLanguage == "En"){
       i18n.changeLanguage('en'); 
-      document.body.setAttribute('dir', 'ltr'); document.body.classList.add('en');localStorage.setItem("language", "en");
+      document.body.setAttribute('dir', 'ltr'); document.body.classList.remove('ar');localStorage.setItem("language", "en");
       What_the_language = "en"
 
     }

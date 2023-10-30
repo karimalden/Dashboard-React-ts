@@ -36,7 +36,7 @@ export default function Theme() {
     <Menu menuButton={<MenuButton>
       {What_the_Theme  == "light" ?  
        <>
-        <img alt='' src={`../Layout/light.svg`} width={20} height={20} />  {t("light")}
+        <img alt='' src={`../Layout/light.svg`} width={20} height={20} className="custom-svg"/>  {t("light")}
        </>
 
       : 
