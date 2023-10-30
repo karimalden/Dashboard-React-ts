@@ -1,8 +1,15 @@
 import { lazy } from "react";
-import { FaHome, FaUser } from "react-icons/fa";
-import Users from "./Pages/users/Users";
 
+// Icon Import 
+import { FaHome, FaUser } from "react-icons/fa";
+import {BsHexagon} from 'react-icons/bs'
+
+
+
+
+// Laxy Load Page 
 const Home = lazy(() => import("./Pages/Home/Home"))
+const ExamplePage = lazy(() => import("./Pages/example/Page"))
 
 
 export const RoutesLinks = [
@@ -13,16 +20,10 @@ export const RoutesLinks = [
         element: <Home />
     },
     {
-        name: "Ibrahim",
-        href: "/ibrahim",
-        icon: <FaHome />,
-        element: <Home />
-    },
-    {
-        name: "user",
-        href: "/user",
-        icon: <FaUser />,
-        element: <Users />
+        name: "example",
+        href: "/example",
+        icon: <BsHexagon />,
+        element: <ExamplePage />
     }
    
 ]

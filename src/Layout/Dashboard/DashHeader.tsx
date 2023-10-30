@@ -1,14 +1,14 @@
 import React from 'react'
-import Add_Button from '../../Components/Utils/AddButton/Add_Button';
+import AddButtonLayout from './AddButton/AddButtonLayout';
 
 
-const DashHeader = ({ children }: { children: React.ReactNode }) => {
+const DashHeader = ({ children , title}: { title:string , children?: React.ReactNode }) => {
   return (
 
     <div className='Page_Header'> 
-    
-     <Add_Button />  
-     <div> {children}</div>
+      {title} 
+      {children}
+     <AddButtonLayout />  
       </div>
 
   )

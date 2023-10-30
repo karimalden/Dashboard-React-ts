@@ -1,7 +1,7 @@
 import React from 'react'
 import './Add_Button.scss'
 import { useModal } from '../../../lib/Zustand'
-const Add_Button = () => {
+const AddButtonLayout = () => {
     const { setIsOpenAddModel  } = useModal()
 
     return (
@@ -17,7 +17,7 @@ const Add_Button = () => {
                         <path fill="none" d="M0 0h24v24H0z" />
                         <path fill="currentColor" d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z" />
                     </svg>{" "}
-                    Create
+                    Add
                 </span>
             </button>
 
@@ -25,4 +25,4 @@ const Add_Button = () => {
     )
 }
 
-export default Add_Button
+export default AddButtonLayout
