@@ -26,27 +26,30 @@ export default function Translate() {
   const [language, setLanguage] = useState("En");
   const { t, i18n } = useTranslation();
 
+  
   const changeLanguage = (newLanguage : any) => {
     i18n.changeLanguage(newLanguage);
     setLanguage(newLanguage);
     if(newLanguage == "Ar"){
-      document.body.setAttribute('dir', 'rtl'); document.body.classList.add('ar');localStorage.setItem("language", "Ar");
+      i18n.changeLanguage('ar'); 
+      document.body.setAttribute('dir', 'rtl'); document.body.classList.add('ar');localStorage.setItem("language", "ar");
     }
     else  if(newLanguage == "En"){
-      document.body.setAttribute('dir', 'ltr'); document.body.classList.add('en');localStorage.setItem("language", "En");
+      i18n.changeLanguage('en'); 
+      document.body.setAttribute('dir', 'ltr'); document.body.classList.add('en');localStorage.setItem("language", "en");
     }
   };
 
   return (
    <div className='Translate'>
     <Menu menuButton={<MenuButton>
-        <img alt='' src={`../Layout/${language}.svg`} width={20} height={20} /> {language == "Ar" ?  "Arabic": "English" }
+        <img alt='' src={`../Layout/${language}.svg`} width={20} height={20} /> {language == "Ar" ?  t("Arabic"): t("English")}
     </MenuButton>} transition>
       <MenuItem onClick={() => changeLanguage('Ar')}>
-        <img alt='' src='../Layout/Ar.svg' width={20} height={20} />  Arabic
+        <img alt='' src='../Layout/Ar.svg' width={20} height={20} />  {t("Arabic")}
       </MenuItem>
       <MenuItem onClick={() => changeLanguage('En')}>
-        <img alt='' src='../Layout/En.svg' width={20} height={20} /> English
+        <img alt='' src='../Layout/En.svg' width={20} height={20} /> {t("English")}
       </MenuItem>
     </Menu>
    

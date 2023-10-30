@@ -1,6 +1,12 @@
 {
     "Ar": "Ar",
     "En": "En",
-   
-    "": ""
+    "Arabic":"Arabic",
+"English":"English",
+    "Login":"Login",
+    "Welcome back, please login to your account.":"Welcome back, please login to your account.",
+    "Username":"Username",    
+    "Password":"Password",
+    "Sign in":"Sign in",
+    "Karim aldeen © 2022 | All Rights Reserved":"Karim aldeen © 2022 | All Rights Reserved"
 }

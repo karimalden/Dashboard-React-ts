@@ -1,5 +1,13 @@
 {
     "Ar": "عربي",
-    "En": "انكليزي"
+    "En": "انكليزي",
+    "Arabic":"عربي",
+"English":"إنجليزي",
+"Login":"تسجيل الدخول",
+"Welcome back, please login to your account.":"مرحبًا بك مرة أخرى ، يرجى تسجيل الدخول إلى حسابك.",
+"Username":"اسم المستخدم",    
+"Password":"كلمة المرور",
+"Sign in":"تسجيل الدخول",
+"Karim aldeen © 2022 | All Rights Reserved":"كريم الدين © 2022 |كل الحقوق محفوظة"
    
 }
