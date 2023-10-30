@@ -1,5 +1,6 @@
 import React from 'react'
 import { UserImageURL } from './Const'
+import Translate from '../../Components/Utils/Translate'
 
 type  TUserData = 
   {username:string | null,
@@ -13,8 +14,7 @@ const Header = () => {
     <div className='Header'>
       <div className='Header_Left'> </div>
       <div className='Header_Right'>
-                {/* <Translate/> */}
-
+<Translate/>
         <div className='User_Pro'>
        <div className='User_info'>
         <h6>{UserData?.username ?? "unknow"}</h6>
