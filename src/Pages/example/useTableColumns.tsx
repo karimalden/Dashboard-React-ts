@@ -13,14 +13,14 @@ const useTableColumns :any = () => {
       {
         name: `${t("name")}`,
         sortable: false,
-        center: true,
+        center: "true",
         cell: (row:any) => row?.name
       },
      
       {
         name: "#",
         sortable: false,
-        center: true,
+        center: "true",
         cell: (row) => (
             <Actions
 
