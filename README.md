@@ -77,6 +77,49 @@ export const RoutesLinks = [
         icon: <BsHexagon />,
         element: <ExamplePage />
     }
-  
+    // add another route 
 ]
+```
+
+Create Folder in Pages   with this Structer
+
+```js
+// Some Imports 
+function YourPageNane() {
+
+    // Your Column For Data Table
+    const column   =useTableColumns()
+
+    // Your Data Fetch  and status (pendding  , loadaing , success)
+    const {data  ,status } = useGetAllExample()
+
+    
+  return (
+    
+    <DashBody status={status as QueryStatusEnum} >
+      <DashHeader title={'Example'}></DashHeader>
+    
+
+
+      <LyTable
+        data={data}
+        isLoading={status === QueryStatusEnum.LOADING}
+        columns={column}
+        // another props  hear 
+    />
+      
+      
+
+          {/*
+            // Your Edit and Add Model  
+            // Dynimc Open Using Zustand  
+          */}
+
+      <EditExampleModal />
+      <AddExampleModal />
+    </DashBody>
+  )
+}
+
+export default YourPageNane
 ```

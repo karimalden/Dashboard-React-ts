@@ -12,13 +12,13 @@ function Page() {
 
     const column   =useTableColumns()
     const {data  ,status } = useGetAllExample()
- 
-    
+
     
   return (
     // Pass Status to Layout 
     <DashBody status={status as QueryStatusEnum} >
       <DashHeader title={'Example'}></DashHeader>
+      
       <LyTable
         data={data}
         isLoading={false}
