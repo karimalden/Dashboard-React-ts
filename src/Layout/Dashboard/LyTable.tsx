@@ -1,5 +1,4 @@
 
-import { useEffect } from 'react';
 import DataTable from 'react-data-table-component';
 import { Card, CardBody, Spinner } from 'reactstrap';
 import { usePageState } from './state';
