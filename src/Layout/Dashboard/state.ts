@@ -4,6 +4,8 @@ interface ModalState {
   isOpenAddModel: boolean;
   isOpenEditModel: boolean;
   objectToEdit: any;
+  isThemChanged:any;
+  setThemChange :()=> void ; 
   setIsOpenAddModel: () => void;
   setIsOpenEditModel: () => void;
   CloseAllModal: () => void;
@@ -14,6 +16,9 @@ export const usePageState = create<ModalState>((set) => ({
   isOpenAddModel: false,
   isOpenEditModel: false,
   objectToEdit: null,
+  isThemChanged:false,
+  setThemChange: () =>
+    set((state) => ({ isThemChanged: !state.isThemChanged })),
   setIsOpenAddModel: () =>
     set((state) => ({ isOpenAddModel: !state.isOpenAddModel })),
   setIsOpenEditModel: () =>

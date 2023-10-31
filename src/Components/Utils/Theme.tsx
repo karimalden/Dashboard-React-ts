@@ -1,5 +1,6 @@
 import { Menu, MenuItem, MenuButton } from '@szhsin/react-menu';
 import { useTranslation } from 'react-i18next';
+import { usePageState } from '../../Layout/Dashboard/state';
 
 
 let What_the_Theme = localStorage.getItem('theme')  ?? "light";
@@ -13,8 +14,9 @@ if (What_the_Theme == "dark") {
 
 
 export default function Theme() {
-  const {t} = useTranslation();
+  const {t} = useTranslation(); 
 
+  const {setThemChange} = usePageState()
 
   const changeTheme = (newTheme : any) => {
 
@@ -28,6 +30,7 @@ export default function Theme() {
       What_the_Theme = "light"
 
     }
+    setThemChange()
   };
 
   console.log(What_the_Theme);
