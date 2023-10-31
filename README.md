@@ -60,7 +60,7 @@ Refer to the following examples to integrate these features seamlessly into your
 
 First Add Your Route And Page in Routes.tsx 
 
-```js
+```ts
 
 
 export const RoutesLinks = [
@@ -234,7 +234,8 @@ Create  your Children Form For Modal
     </Col>
     
     {/*
-        or you can use from zero the formik input 
+        or you can use from ze
+ro the formik input 
         <Field
         name="name"
         ...ect
