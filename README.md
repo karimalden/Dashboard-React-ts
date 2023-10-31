@@ -7,7 +7,11 @@ Welcome to Structer Dashboard, an open-source dashboard designed to streamline y
 To incorporate the Structer Dashboard into your project, follow these steps:
 
 1. Ensure you have Node.js version 18 installed.
-2. Install the JSON server by running `npm i -g json-server`.
+2. Install the JSON server by running 
+    ```bash
+    npm i -g json-server
+    ```
+    
 3. Run the JSON server with the command `json-server --watch db.json`.
 4. Install the necessary dependencies using PNPM by running `pnpm install`.
 5. Launch the dashboard with `pnpm start`.
