@@ -61,3 +61,22 @@ For any queries or support, please reach out to our team at karimaldenlibrary@gm
 ## Conclusion
 
 We hope this documentation assists you in leveraging the full potential of the Structer Dashboard. Customize the dashboard as per your needs and explore its diverse range of features. Should you have any further questions, please do not hesitate to reach out.
+
+
+## Real Example 
+
+First Add Your Route And Page in Routes.tsx 
+
+```js
+
+
+export const RoutesLinks = [
+    {
+        name: "example",
+        href: "/",
+        icon: <BsHexagon />,
+        element: <ExamplePage />
+    }
+  
+]
+```
