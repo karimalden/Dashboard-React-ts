@@ -54,13 +54,6 @@ Refer to the following examples to integrate these features seamlessly into your
 4. Define initial values and validate schemas for your input in the 'formUtils' file.
 5. Implement the 'handleSubmit' function to manage form submissions effectively.
 
-## Contact
-
-For any queries or support, please reach out to our team at karimaldenlibrary@gmail.com or contact us via phone at +963951968994.
-
-## Conclusion
-
-We hope this documentation assists you in leveraging the full potential of the Structer Dashboard. Customize the dashboard as per your needs and explore its diverse range of features. Should you have any further questions, please do not hesitate to reach out.
 
 
 ## Real Example 
@@ -252,3 +245,12 @@ Create  your Children Form For Modal
   )
 
 ```
+
+
+## Contact
+
+For any queries or support, please reach out to our team at karimaldenlibrary@gmail.com or contact us via phone at +963951968994.
+
+## Conclusion
+
+We hope this documentation assists you in leveraging the full potential of the Structer Dashboard. Customize the dashboard as per your needs and explore its diverse range of features. Should you have any further questions, please do not hesitate to reach out.
