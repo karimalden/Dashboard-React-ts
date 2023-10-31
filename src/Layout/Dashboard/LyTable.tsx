@@ -20,7 +20,7 @@ const LyTable = (props:any) => {
   return (
     <Card>
     <CardBody>
-      <DataTable
+            <DataTable
       columns={props?.column}
       data={props?.data}
       progressPending={props?.isLoading}

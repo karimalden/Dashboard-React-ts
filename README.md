@@ -123,3 +123,132 @@ function YourPageNane() {
 
 export default YourPageNane
 ```
+
+
+
+
+Create Your Modal Add and Edit 
+
+```js
+
+  // Translate 
+  const [t] = useTranslation()
+
+  // Your Fetch function 
+  const {mutate , status} = useAddExample()
+
+
+  // Create your Submit Form   => using Formik   
+  const handelSubmit = (values:any )=>{
+
+
+        // change values Shap For Send To Api
+    const dataToSend = getDataToSend(values)
+
+    mutate(dataToSend)
+    // Submit Value
+  }
+
+
+  return (
+    // Customized you model 
+    <LayoutModal
+    
+     isAddModal={true}
+     // inital value for form
+     getInitialValues={getInitialValues()} 
+     // validate your schema form input 
+     getValidationSchema={getValidationSchema()}
+     handleSubmit={handelSubmit} 
+     // Dynmic Close Modal when status Success and make Loading Button  if status loading 
+     status={status as QueryStatusEnum}
+     headerText={`${t('Add')} ${t('example')}`}
+     >
+    {/*
+        add Your Children Component 
+    */}
+    <FormExample />
+  </LayoutModal>
+  )
+
+```
+
+
+create your formUtils file with your validate and inital value and getDatasend functions
+
+```js
+
+export const getInitialValues = (objectToEdit: ObjectToEdit | null = null): InitialValues => {
+ 
+
+    // change your inital value with your state
+  return {
+    id:objectToEdit?.id?? 0 ,
+    name:objectToEdit?.name ?? "",
+    email:objectToEdit?.email?? ""
+  }
+
+
+};
+
+export const getValidationSchema = (editMode: boolean = false): Yup.Schema<ValidateSchema> => {
+    // validate input  
+  return Yup.object().shape({
+    name:Yup.string().required('required'),
+    email:Yup.string().required("required")
+  });
+};
+
+export const getDataToSend = (values: any): FormData => {
+  const data = { ...values };
+    
+    // apply your  data shap change
+  
+  const formData = new FormData();
+  buildFormData(formData, data);
+  return formData;
+};
+
+
+```
+
+
+Create  your Children Form For Modal
+```js
+ 
+
+    // translated object
+    const [t] = useTranslation()
+  return (
+    <Row xs={1} sm={1} md={1} lg={2} xl={2}>
+    <Col>
+        
+      <ValidatedField
+        name="name"
+        label={`${t("name")}`}
+        placeholder={`${t("name")}`}
+        // custom props
+      />
+     
+    
+    </Col>
+    <Col>
+    <ValidatedField
+        name="email"
+        label={`${t("email")}`}
+        placeholder={`${t("email")}`}
+      />
+    </Col>
+    
+    {/*
+        or you can use from zero the formik input 
+        <Field
+        name="name"
+        ...ect
+        />
+    */}
+  </Row>
+
+  )
+
+```
