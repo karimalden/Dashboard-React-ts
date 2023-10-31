@@ -13,7 +13,6 @@ const App = () => {
     <Routes>
       <Route path="*" element={<Suspense fallback={<Loading />}> <Page404 /></Suspense>} />
       <Route path="/auth" element={<Suspense fallback={<Loading />}> <Auth /></Suspense>} />
-
       {RoutesLinks?.map((item: any, index: number) => (
         <Route key={index} path={item.href} element={<Suspense fallback={<Loading />}>
           <Layout>  {item?.element ?? "Please Add Elemnt Props in Routes"} </Layout></Suspense>} />))

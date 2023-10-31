@@ -27,7 +27,7 @@ const SideBar = () => {
   return (
     <div className={IsopenSide ? "SideBar SideBar_Open" : 'SideBar'}>
       <div className='SideBar_Top'>
-        <img alt=' ' src={SideBarLogoUrl} width={60} height={40} onClick={()=>Onimg()}/>
+        <img alt='SideBarLogo' src={SideBarLogoUrl} loading='lazy' width={60} height={40} onClick={()=>Onimg()}/>
         <div className='HamburgerMenu' onClick={()=> OnHamburgerMenu()} >
           <GiHamburgerMenu />
 
