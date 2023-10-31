@@ -101,6 +101,7 @@ const SideBar = () => {
 
                         )
                       }
+                      return null
                     }
 
                     )

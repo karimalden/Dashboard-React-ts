@@ -15,7 +15,7 @@ function AddExampleModal() {
 
     const dataToSend = getDataToSend(values)
 
-    mutate(values)
+    mutate(dataToSend)
     // Submit Value
   }
   return (

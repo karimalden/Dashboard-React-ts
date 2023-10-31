@@ -1,11 +1,10 @@
 import { Menu, MenuItem, MenuButton } from '@szhsin/react-menu';
-import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 
 let What_the_Theme = localStorage.getItem('theme')  ?? "light";
 
-if (What_the_Theme == "dark") {
+if (What_the_Theme === "dark") {
  
  document.body.classList.add('dark')}
   else{
@@ -14,17 +13,15 @@ if (What_the_Theme == "dark") {
 
 
 export default function Theme() {
-  const [Theme, setTheme] = useState("light");
   const {t} = useTranslation();
 
-  
+
   const changeTheme = (newTheme : any) => {
-    setTheme(newTheme);
-    if(newTheme == "dark"){
+    if(newTheme === "dark"){
      document.body.classList.add('dark');localStorage.setItem("theme", "dark");
       What_the_Theme = "dark"
     }
-    else  if(newTheme == "light"){
+    else  if(newTheme === "light"){
      document.body.classList.remove('dark');localStorage.setItem("theme", "light");
       What_the_Theme = "light"
 
@@ -34,7 +31,7 @@ export default function Theme() {
   return (
    <div className='Theme'>
     <Menu menuButton={<MenuButton>
-      {What_the_Theme  == "light" ?  
+      {What_the_Theme  === "light" ?  
        <>
         <img alt='' src={`../Layout/light.svg`} width={20} height={20} className="custom-svg"/>  {t("light")}
        </>

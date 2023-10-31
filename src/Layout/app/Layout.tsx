@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react'
 import SideBar from './SideBar'
 import Header from './Header'
-import QueryProvider from '../../lib/ReactQueryProvider'
 import { TOKEN_KEY } from '../../config/AppKey'
 import { useNavigate } from 'react-router-dom'
 
@@ -17,7 +16,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           
       navigate('/auth' , {replace:true})
     }
-  },[])
+  },[navigate])
   return (
     <>
     <div className="DashboardLayout">
