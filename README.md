@@ -12,9 +12,18 @@ To incorporate the Structer Dashboard into your project, follow these steps:
     npm i -g json-server
     ```
     
-3. Run the JSON server with the command `json-server --watch db.json`.
-4. Install the necessary dependencies using PNPM by running `pnpm install`.
-5. Launch the dashboard with `pnpm start`.
+3. Run the JSON server with the command .
+ ```bash
+    json-server --watch db.json
+```
+
+4. Install the necessary dependencies using PNPM by running 
+```bash
+pnpm install
+```
+
+5. Launch the dashboard with 
+```bash pnpm start ```
 6. Visit http://localhost:3333 to view the dashboard.
 
 ## Components
@@ -82,7 +91,7 @@ Create Folder in Pages   with this Structer
 
 ```js
 // Some Imports 
-function YourPageNane() {
+function YourPageName() {
 
     // Your Column For Data Table
     const column   =useTableColumns()
@@ -118,7 +127,7 @@ function YourPageNane() {
   )
 }
 
-export default YourPageNane
+export default YourPageName
 ```
 
 
