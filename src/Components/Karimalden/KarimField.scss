@@ -1,0 +1,230 @@
+.KarimField{
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
+        width: 100%;
+      
+      label.text {
+        font-size: 0.75rem;
+        color: var(--gray);
+        font-weight: 700;
+        position: relative;
+        top: 0.5rem;
+        margin: 0 0 0 7px;
+        padding: 0 3px;
+        background: var(--bg);
+        width: fit-content;
+        text-transform: capitalize;
+      }
+      
+      input {
+        padding: 11px 10px;
+        font-size: 0.75rem;
+        border: 2px var(--gray) solid;
+        border-radius: 5px;
+        background: var(--bg);
+        color: var(--primary);
+        
+      }
+      
+     
+      &:has(input:focus)  {
+        .isErrorIcon{
+          display: none;
+        }
+        input:focus {
+            outline: none;
+            border: 2px var(--primary) solid;
+          }
+        .text{
+            color: var(--primary) !important;
+
+        }
+        input::placeholder{
+            color: var(--primary);
+        }
+        
+
+    }
+    &:has(.is-invalid){
+        input {
+            outline: none;
+            border: 2px red solid;
+
+          }
+        .text{
+            color: red !important;
+
+        }
+        input::placeholder{
+            color: red;
+        }
+ 
+        
+
+    }
+    .is-invalid{
+      .react-select__control{
+        outline: none;
+        border: 2px red solid !important;
+       }}
+   .Karim_field_container{
+    width: 100%;
+    position: relative;
+    .error-icon {
+      color: red;
+    }
+   }
+  
+   &:has(.hasValue)  {
+    input {
+        outline: none;
+        border: 2px var(--primary) solid;
+      }
+    .text{
+        color: var(--primary) !important;
+
+    }
+    input::placeholder{
+        color: var(--primary);
+    }
+    
+
+}
+}
+.KarimCheckbox{
+  /* Hide the default checkbox */
+  margin-block:24px 11px;
+  .cont {
+    display: flex;
+    align-items: center;
+    transform: scale(1);
+   }
+   
+   input[type="checkbox"] {
+    height: 1.7rem;
+    width: 1.7rem;
+    margin: 5px;
+    display: inline-block;
+    appearance: none;
+    position: relative;
+    background-color: var(--bg2);
+    border-radius: 15%;
+    cursor: pointer;
+    overflow: hidden;
+    box-shadow: -4px 2px 10px 0 rgba(0, 0, 0, .2);
+    
+   }
+   
+   input[type="checkbox"]::after {
+    content: '';
+    display: block;
+    height: 0.9rem;
+    width: .4rem;
+    border-bottom: .31rem solid var(--bg);
+    border-right: .31rem solid var(--bg);
+    opacity: 0;
+    transform: rotate(45deg) translate(-50%, -50%);
+    position: absolute;
+    top: 45%;
+    left: 21%;
+    transition: .25s ease;
+   }
+   
+   input[type="checkbox"]::before {
+    content: '';
+    display: block;
+    height: 0;
+    width: 0;
+    background-color: var(--primary);
+    border-radius: 50%;
+    opacity: .5;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transition: .3s ease;
+   }
+   
+   input[type="checkbox"]:checked::before {
+    height: 130%;
+    width: 130%;
+    opacity: 100%;
+   }
+   
+   input[type="checkbox"]:checked::after {
+    opacity: 100%;
+   }
+   
+   span {
+    font-size: 2rem;
+   }
+
+}
+.KarimSelect{
+  .react-select__control{
+    padding: 2px;
+  }
+  .text {
+    font-size: 0.75rem;
+    color: var(--gray);
+    font-weight: 700;
+    position: relative;
+    top: 0.2rem;
+    margin: 0 0 0 7px;
+    padding: 0 3px;
+    background: var(--bg);
+    width: fit-content;
+    text-transform: capitalize;
+    // z-index: 2;
+  }
+  &:has(.Disabled){
+    .text {
+      // color: var(--text);
+      background: transparent;
+
+     
+    }
+  }
+
+  &:has(.hasValue)  {
+    .react-select__control{
+      outline: none;
+      border: 2px var(--primary) solid !important;
+     }
+    .css-tj5bde-Svg{
+      color: var(--primary);
+    }
+    .text {
+      color: var(--primary);
+
+     
+    }
+    }
+
+}
+
+.is-invalid{
+  .react-select__control{
+    outline: none;
+    border: 2px red solid !important;
+   }
+  .css-tj5bde-Svg{
+    color: red;
+  }
+
+  }
+  
+ 
+  .css-t3ipsp-control{
+    border-color:var(--primary) !important;
+    box-shadow:0 0 0 .1px var(--primary) !important
+
+   }
+   .Datepicker{
+    display: flex;
+    gap: 5%;
+    .KarimField{
+      width:50%;
+    }
+   }

@@ -2,6 +2,7 @@ import { lazy } from "react";
 
 // Icon Import 
 import {BsHexagon} from 'react-icons/bs'
+import Page from "./Pages/Example2/Page";
 
 
 
@@ -16,6 +17,12 @@ export const RoutesLinks = [
         href: "/",
         icon: <BsHexagon />,
         element: <ExamplePage />
+    },
+    {
+        name: "example2",
+        href: "/example2",
+        icon: <BsHexagon />,
+        element: <Page />
     }
   
 ]

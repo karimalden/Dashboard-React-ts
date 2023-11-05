@@ -13,7 +13,7 @@ interface ModalState {
 }
 
 export const usePageState = create<ModalState>((set) => ({
-  isOpenAddModel: false,
+  isOpenAddModel: true,
   isOpenEditModel: false,
   objectToEdit: null,
   isThemChanged:false,
