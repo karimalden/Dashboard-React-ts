@@ -28,6 +28,7 @@ function LayoutModal({isAddModal , headerText , handleSubmit =()=>{} , getInitia
           CloseAllModal()
       }
     },[status , CloseAllModal])
+    
     const [t] = useTranslation()
     return (
     <Modal centered isOpen={isAddModal ? isOpenAddModel :isOpenEditModel} size="lg" >
