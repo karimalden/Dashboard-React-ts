@@ -3,10 +3,25 @@
     display: flex;
     gap: 10%;
     color: var(--text);
-    width: 90%;
-
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-color: var(--bg);
+    // background-image: url("../../../public/Layout/mac.webp");
+    min-height: 100vh;
+    display: flex; justify-content: center; align-items: center;
     
 }
+
+.DashboardLayout_Cover{
+//     background-color: rgba(16 18 27 / 40%);
+//   backdrop-filter: blur(24px);
+  min-height: 96vh;
+  width: 98vw;
+  border-radius: 20px;
+
+}
+
 .DashboardLayout_Body{
     position: absolute;
     left: 290px;
@@ -99,3 +114,95 @@
 //     background: var(--bg) !important;
     
 //    }
+
+.modal-content{
+    background-color: var(--bg) !important;
+}
+.btn-primary{
+    background: var(--primary);
+    border-color: var(--primary) !important;
+    &:hover{
+        background: var(--primary);
+
+    }
+}
+.ModalHeader{
+    color: var(--text);
+}
+ .css-b62m3t-container .react-select__control{
+    background-color:var(--bg);
+   }
+   
+   .react-select__control--is-disabled{
+    background-color:var(--bg) !important;
+   }
+
+   .glass{
+
+    .modal {
+        display: flex;
+        gap: 10%;
+        color: var(--text);
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+        background-color: var(--bg);
+        // background-image: url("../../../public/Layout/mac.webp");
+        min-height: 100vh;
+        display: flex; justify-content: center; align-items: center;
+        background-image: url("../../../public/Layout/mac.webp");
+
+    }
+    .DashboardLayout {
+       
+        background-image: url("../../../public/Layout/mac.webp");
+
+        
+    }
+    .modal-content{
+        background-color: rgba(16 18 27 / 40%);
+        backdrop-filter: blur(24px);
+  
+    }
+    .DashboardLayout_Cover{
+            background-color: rgba(16 18 27 / 40%);
+          backdrop-filter: blur(24px);
+    
+        
+        }
+        .LayoutBody{
+            overflow-y: scroll;
+            height: 400px;
+        }
+    }
+
+
+  
+
+    
+    .glass{
+
+    ::-webkit-scrollbar { min-width: 15px; width: 100%; } 
+    ::-webkit-scrollbar-track { box-shadow: inset 0 0 5px var(--primary); }
+    ::-webkit-scrollbar-thumb,::-webkit-scrollbar-thumb:hover {
+        background:transparent no-repeat center center ; 
+        background-size: cover;
+        &:hover{
+            background:var(--primary) no-repeat center center ; 
+
+     }
+    }
+        .Add_Button {
+            button{
+                background-color: transparent !important;
+                border: 2px solid transparent;
+                @include Shadow;
+                color: var(--text);
+            }
+        }
+    }
+  
+    .SweetAlert {
+        background-color: rgba(10, 45, 200, 0.4);
+        // backdrop-filter: blur(24px);
+        }

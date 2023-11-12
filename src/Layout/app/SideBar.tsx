@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { useLocation } from 'react-router-dom';
 import { RoutesLinks } from '../../Routes';
 import { useTranslation } from 'react-i18next';
+import KarimLogo from './KarimLogo';
 
 const SideBar = () => {
   const {pathname} = useLocation();
@@ -27,7 +28,10 @@ const SideBar = () => {
   return (
     <div className={IsopenSide ? "SideBar SideBar_Open" : 'SideBar'}>
       <div className='SideBar_Top'>
-        <img alt='SideBarLogo' src={SideBarLogoUrl} loading='lazy' width={60} height={40} onClick={()=>Onimg()}/>
+        <div onClick={()=>Onimg()}>
+          <KarimLogo/>
+        </div>
+        {/* <img alt='SideBarLogo' src={SideBarLogoUrl} loading='lazy' width={60} height={40} /> */}
         <div className='HamburgerMenu' onClick={()=> OnHamburgerMenu()} >
           <GiHamburgerMenu />
 

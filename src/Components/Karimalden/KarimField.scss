@@ -1,3 +1,18 @@
+.glass{
+  .KarimField {
+    margin-block: 10px;
+
+    .text {
+ 
+      top: 0rem;
+      margin: 0 0 0 7px;
+    
+    }
+  }
+  
+ 
+}
+
 .KarimField{
         display: flex;
         flex-direction: column;
@@ -99,6 +114,7 @@
     display: flex;
     align-items: center;
     transform: scale(1);
+    color: var(--text);
    }
    
    input[type="checkbox"] {
@@ -227,4 +243,30 @@
     .KarimField{
       width:50%;
     }
+   }
+  
+   /* React Unknown  menu */
+
+   .glass{
+    .modal-body .KarimSelect .react-select__menu{
+      // background-color:transparent;
+          // background-image: url("../../../public/Layout/mac.webp");
+          background-size: cover;
+          background-color: rgba(16 18 27 / 100%);
+            backdrop-filter: blur(24px);
+    
+     }
+     
+     /* Division */
+    .modal-body .react-select__menu-list--is-multi .react-select__option--is-focused{
+      background-color:transparent;
+     }
+     
+     
+     .modal-body .KarimSelect .react-select__option--is-focused{
+      background-color:transparent;
+     }
+     button{
+      background-color: transparent !important;
+     }
    }

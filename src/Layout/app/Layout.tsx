@@ -20,7 +20,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
     <div className="DashboardLayout">
-
+    <div className='DashboardLayout_Cover' >
     <SideBar/>
     
     <div className={`DashboardLayout_Body`} id='DashboardLayout_Body'>
@@ -30,7 +30,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       </div>
      
     </div>
-    
+    </div>
     </div>
     </>
   )

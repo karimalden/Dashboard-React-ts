@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { usePageState } from './state'
+import { usePageState } from '../../lib/state'
 
 function useCloseModal(statusClose:any) {
 

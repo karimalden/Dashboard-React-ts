@@ -26,9 +26,10 @@ function CustomUI({ onClose, options }:CustomUIProps) {
 
   const [t] = useTranslation()
   return (
-    <div className="SweetAlert">
+    <div className="">
   <SweetAlert
       title={options.title || t(`delete_are_you_sure`)}
+      customClass="SweetAlert"
       warning
       show={true}
       showCancel

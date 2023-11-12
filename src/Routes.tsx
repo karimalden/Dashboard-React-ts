@@ -24,5 +24,45 @@ export const RoutesLinks = [
         icon: <BsHexagon />,
         element: <Page />
     }
+    ,
+    {
+        name: "example3",
+        href: "/example3",
+        icon: <BsHexagon />,
+        element: <Page />
+    }
+  
+    ,
+    {
+        name: "example4",
+        href: "/example4",
+        icon: <BsHexagon />,
+        element: <Page />
+    }
+  
+    ,
+    {
+        name: "example5",
+        href: "/example5",
+        icon: <BsHexagon />,
+        element: <Page />
+    }
+  
+    ,
+    {
+        name: "example6",
+        href: "/example6",
+        icon: <BsHexagon />,
+        element: <Page />
+    }
+  
+    ,
+    {
+        name: "example7",
+        href: "/example7",
+        icon: <BsHexagon />,
+        element: <Page />
+    }
+  
   
 ]

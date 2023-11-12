@@ -10,13 +10,14 @@ import { QueryStatusEnum } from '../../config/QueryStatus'
 
 function Page() {
 
-    const column   =useTableColumns()
-    const {data  ,status } = useGetAllExample()
+    // const column   =useTableColumns()
+    // const {data  ,status } = useGetAllExample()
 
     
   return (
     // Pass Status to Layout 
-    <DashBody status={status as QueryStatusEnum} >
+    <>
+    {/* <DashBody status={status as QueryStatusEnum} >
       <DashHeader title={'Example'}></DashHeader>
       
       <LyTable
@@ -29,7 +30,9 @@ function Page() {
 
       <EditExampleModal />
       <AddExampleModal />
-    </DashBody>
+    </DashBody> */}
+    </>
+
   )
 }
 

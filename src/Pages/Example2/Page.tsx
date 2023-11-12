@@ -5,14 +5,14 @@ import LyTable from '../../Layout/Dashboard/LyTable'
 import useTableColumns from './useTableColumns'
 import EditExampleModal from './EditExampleModal'
 import AddExampleModal from './AddExampleModal'
-import { useGetAllExample } from '../../api/example'
-import { QueryStatusEnum } from '../../config/QueryStatus'
+import { useGetDynamic } from '../../api/Route/Get'
 
 function Page() {
 
     const column   =useTableColumns()
-    const {data  ,status } = useGetAllExample()
-
+    const {data} = useGetDynamic("users")
+  console.log(data);
+  
     
   return (
     // Pass Status to Layout 

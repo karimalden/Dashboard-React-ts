@@ -17,10 +17,14 @@
     font-weight: bolder;
    
  }   
+ svg{
+    margin-inline:10px;
+ }
 }
 .Header_Menu{
    
     z-index: 9999999999999;
+
 }
 .szh-menu-button{
     color: var(--primary);

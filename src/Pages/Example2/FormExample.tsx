@@ -4,7 +4,6 @@ import KarimField from '../../Components/Karimalden/KarimField';
 import { FakeSelectData } from '../../Layout/app/Const';
 import { useFormikContext } from 'formik';
 
-import { DatePicker } from 'antd';
 
 function FormExample() {
   const formik = useFormikContext<any>();
@@ -17,7 +16,7 @@ function FormExample() {
     <KarimField name="name" type="text"label='name'  placeholder='placeholder' />
     <KarimField name="number" type="number" label='number' placeholder='placeholder' />
     <KarimField name="select" type="select"label='select'  option={FakeSelectData} isMulti={true} placeholder='placeholder'  />
-    <KarimField name="Multiselect" type="select"label='Multiselect'  option={FakeSelectData} Disabled={true} placeholder='placeholder'/>
+    <KarimField name="Multiselect" type="select"label='Multiselect'  option={FakeSelectData} Disabled={false} placeholder='placeholder'/>
 
     
     </Col>
@@ -30,6 +29,8 @@ function FormExample() {
 
     </Col>
 
+<Col>
+</Col>
    
   </Row>
   )

@@ -11,10 +11,30 @@ const useTableColumns :any = () => {
     () => [
  
       {
+        name: `${t("id")}`,
+        sortable: false,
+        center: "true",
+        cell: (row:any) => row?.id
+      },
+      {
         name: `${t("name")}`,
         sortable: false,
         center: "true",
         cell: (row:any) => row?.name
+      },
+
+      {
+        name: `${t("username")}`,
+        sortable: false,
+        center: "true",
+        cell: (row:any) => row?.username
+      },
+
+      {
+        name: `${t("password")}`,
+        sortable: false,
+        center: "true",
+        cell: (row:any) => row?.password
       },
      
       {
@@ -23,11 +43,7 @@ const useTableColumns :any = () => {
         center: "true",
         cell: (row) => (
             <Actions
-
-            // importnat to return the row in on Edit Function to store in objectToEdit That Upper in Edit Modal 
-              onEdit={() => row}
-              
-              showEdit={true}
+              onEdit={() => row}              
               // showDelete={false}
               onDelete={() => fnDelete({ id: row.id })}
             />

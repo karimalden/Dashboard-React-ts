@@ -61,6 +61,8 @@
         box-shadow: 2px 2px 7px 0 var(--primary);
         cursor: pointer;
         transform: scale(1.01);
+        @include Shadow;
+
         svg{
           
                 // background-color: var(--secondary);
@@ -113,7 +115,7 @@
     width: 100%;
 }
 .Active_SideBar_Link{
-    background: linear-gradient(118deg, #597f5c, rgba(89, 127, 92, 0.7));
+    background: var(--linear);
     color: var(--bg);
     border-radius: 5px;
     box-shadow: 2px 2px 7px 0 var(--primary);
@@ -122,6 +124,35 @@
         background-color: transparent;
         color: var(--bg);
         
+    }
+}
+.glass{
+    .Active_SideBar_Link{
+        background: var(--linear);
+        color: var(--bg);
+        border-radius: 5px;
+        box-shadow: 2px 2px 7px 0 transparent;
+    
+        svg {
+           
+            
+        }
+    }
+    .SideBar_Link {
+        &:hover{
+            background: transparent;
+            color: var(--bg);
+            border-radius: 5px;
+            box-shadow: 1px 2px 7px 0 transparent;
+            cursor: pointer;
+            transform: scale(1.01);
+            svg{
+              
+                    background-color:transparent;
+                    color: var(--text);
+                
+            }
+        }
     }
 }
 
@@ -154,3 +185,14 @@
         background: var(--bg2);
     }
    
+    
+     
+      .KarimLogo{
+        width: 50px;
+        margin-inline: 70px;
+
+        .cls-1, .cls-2 {
+            fill:var(--primary) !important;
+          }
+      }
+      

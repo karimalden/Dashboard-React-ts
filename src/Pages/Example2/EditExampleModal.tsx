@@ -2,7 +2,7 @@ import React from 'react'
 import LayoutModal from '../../Layout/Dashboard/LayoutModal'
 import FormExample from './FormExample'
 import { getInitialValues, getValidationSchema } from './formUtils'
-import { usePageState } from '../../Layout/Dashboard/state'
+import { usePageState } from '../../lib/state'
 
 function EditExampleModal() {
   const {objectToEdit} = usePageState()
