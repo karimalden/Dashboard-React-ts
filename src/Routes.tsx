@@ -1,10 +1,12 @@
-import { lazy } from "react";
+import { ReactNode, lazy } from "react";
 
 // Icon Import 
 import {BsHexagon} from 'react-icons/bs'
 import Page from "./Pages/Example2/Page";
 import ExampleView from "./Pages/Example/View/Page";
-// import Page from "./Pages/ttt/Page";
+import { IconType } from "react-icons";
+import Test2Page from "./Pages/test2/Test2Page";
+    // import Page from "./Pages/ttt/Page";
 
 
 
@@ -12,63 +14,32 @@ import ExampleView from "./Pages/Example/View/Page";
 // Laxy Load Page 
 const ExamplePage = lazy(() => import("./Pages/Example/Page"))
 
-
-export const RoutesLinks = [ 
+interface RoutesLinksType {
+    name:string ,
+    href:string,
+    element:ReactNode,
+    icon:any,
+    Viewelement?:ReactNode,
+    Viewhref?:string
+}
+export const RoutesLinks: RoutesLinksType[] = [ 
     {
         name: "example",
         href: "/",
-        icon: <BsHexagon />,
+        icon: <BsHexagon/> ,
         element: <ExamplePage />,
         Viewelement: <ExampleView />,
         Viewhref: "/:id"
 
     },
     {
-        name: "test",
-        href: "/test",
-        icon: <BsHexagon />,
-        element: <Page />
+        element:<Test2Page/>,
+        href:"/test",
+        icon:<BsHexagon/>,
+        name:"test",
+
     }
-    ,
-    {
-        name: "example3",
-        href: "/example3",
-        icon: <BsHexagon />,
-        element: <Page />
-    }
-  
-    ,
-    {
-        name: "example4",
-        href: "/example4",
-        icon: <BsHexagon />,
-        element: <Page />
-    }
-  
-    ,
-    {
-        name: "example5",
-        href: "/example5",
-        icon: <BsHexagon />,
-        element: <Page />
-    }
-  
-    ,
-    {
-        name: "example6",
-        href: "/example6",
-        icon: <BsHexagon />,
-        element: <Page />
-    }
-  
-    ,
-    {
-        name: "example7",
-        href: "/example7",
-        icon: <BsHexagon />,
-        element: <Page />
-    }
-  
+
     
     // {
     //     name: "example2",

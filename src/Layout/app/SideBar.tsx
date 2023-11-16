@@ -51,7 +51,7 @@ const SideBar = () => {
                     className={isActive ? 'SideBar_Link Active_SideBar_Link' : 'SideBar_Link'}
                     key={index}
                   >
-                    {i?.icon}
+                    {(i?.icon )}
                     <div className='Link_Text'>
                       {t(`${i?.name}`)}
 

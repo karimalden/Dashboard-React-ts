@@ -14,7 +14,7 @@ import React from 'react'
 import LayoutModal from '../../Layout/Dashboard/LayoutModal'
 import Form${capitalizeFirstLetter(fileName)} from './Form${capitalizeFirstLetter(fileName)}'
 import { getInitialValues, getValidationSchema } from './formUtil'
-import { usePageState } from '../../Layout/Dashboard/state'
+import { usePageState } from '../../lib/state'
 
 function Edit${capitalizeFirstLetter(fileName)}Modal() {
   const {objectToEdit} = usePageState()

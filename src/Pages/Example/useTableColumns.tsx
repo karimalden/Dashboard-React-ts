@@ -50,7 +50,7 @@ const useTableColumns :any = () => {
                 navigate("/3");
 
               }}    
-
+              objectToEdit={row}
               showEdit={true}          
               // showDelete={false}
               onDelete={() => fnDelete({ id: row.id })}

@@ -27,7 +27,7 @@ import { QueryStatusEnum } from '../../config/QueryStatus'
 import Edit${capitalizeFirstLetter(fileName)}Modal from './Edit${capitalizeFirstLetter(fileName)}Modal'
 import Add${capitalizeFirstLetter(fileName)}Modal from './Add${capitalizeFirstLetter(fileName)}Modal'
 
-function Page() {
+function ${capitalizeFirstLetter(fileName)}Page() {
 
     const column   =useTableColumns()
     const {data  ,status } = useGet${capitalizeFirstLetter(fileName)}()
@@ -50,11 +50,11 @@ function Page() {
   )
 }
 
-export default Page
+export default ${capitalizeFirstLetter(fileName)}Page
 
 `
 
-fs.writeFileSync('src/Pages/'+fileName+"/"+"Page.tsx", 
+fs.writeFileSync('src/Pages/'+fileName+"/"+capitalizeFirstLetter(fileName)+"Page.tsx", 
 FileContiner
 );
 

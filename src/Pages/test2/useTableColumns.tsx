@@ -1,3 +1,4 @@
+
 import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import Actions from "../../Components/Ui/tables/Actions";
@@ -11,30 +12,10 @@ const useTableColumns :any = () => {
     () => [
  
       {
-        name: `${t("id")}`,
+        name: t("email"),
         sortable: false,
         center: "true",
-        cell: (row:any) => row?.id
-      },
-      {
-        name: `${t("name")}`,
-        sortable: false,
-        center: "true",
-        cell: (row:any) => row?.name
-      },
-
-      {
-        name: `${t("username")}`,
-        sortable: false,
-        center: "true",
-        cell: (row:any) => row?.username
-      },
-
-      {
-        name: `${t("password")}`,
-        sortable: false,
-        center: "true",
-        cell: (row:any) => row?.password
+        cell: (row:any) => row?.email
       },
      
       {
@@ -43,10 +24,12 @@ const useTableColumns :any = () => {
         center: "true",
         cell: (row) => (
             <Actions
+
+            // importnat to return the row in on Edit Function to store in objectToEdit That Upper in Edit Modal 
+              onEdit={() => row}
+              onView={()=>{}}
               objectToEdit={row}
-              onEdit={() => row}     
-              onView={() => {}}    
-          
+              showEdit={true}
               // showDelete={false}
               onDelete={() => fnDelete({ id: row.id })}
             />
@@ -58,3 +41,4 @@ const useTableColumns :any = () => {
 };
 
 export default useTableColumns;
+
