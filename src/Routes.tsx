@@ -3,12 +3,13 @@ import { lazy } from "react";
 // Icon Import 
 import {BsHexagon} from 'react-icons/bs'
 import Page from "./Pages/Example2/Page";
+import ExampleView from "./Pages/Example/View/Page";
 
 
 
 
 // Laxy Load Page 
-const ExamplePage = lazy(() => import("./Pages/example/Page"))
+const ExamplePage = lazy(() => import("./Pages/Example/Page"))
 
 
 export const RoutesLinks = [
@@ -16,7 +17,10 @@ export const RoutesLinks = [
         name: "example",
         href: "/",
         icon: <BsHexagon />,
-        element: <ExamplePage />
+        element: <ExamplePage />,
+        Viewelement: <ExampleView />,
+        Viewhref: "/:id"
+
     },
     {
         name: "example2",

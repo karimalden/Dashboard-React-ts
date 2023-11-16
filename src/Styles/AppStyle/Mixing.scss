@@ -11,3 +11,17 @@
  align-items: center;
 
 }
+
+@mixin GlassModeBG{
+  background-image: url("../../../public/Layout/mac.webp");
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex; justify-content: center; align-items: center;
+}
+
+@mixin GlassModeCover{
+  background-color: rgba(16 18 27 / 40%);
+  backdrop-filter: blur(24px);
+}

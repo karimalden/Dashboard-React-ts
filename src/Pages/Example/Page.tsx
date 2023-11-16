@@ -5,19 +5,17 @@ import LyTable from '../../Layout/Dashboard/LyTable'
 import useTableColumns from './useTableColumns'
 import EditExampleModal from './EditExampleModal'
 import AddExampleModal from './AddExampleModal'
-import { useGetAllExample } from '../../api/example'
+import { useGetDynamic } from '../../api/Route/Get'
 import { QueryStatusEnum } from '../../config/QueryStatus'
 
-function Page() {
+function ExamplePage() {
 
-    // const column   =useTableColumns()
-    // const {data  ,status } = useGetAllExample()
-
+    const column   =useTableColumns()
+    const {data ,status} = useGetDynamic("users")  
     
   return (
-    // Pass Status to Layout 
-    <>
-    {/* <DashBody status={status as QueryStatusEnum} >
+    <DashBody status={status as QueryStatusEnum} >
+      <>
       <DashHeader title={'Example'}></DashHeader>
       
       <LyTable
@@ -30,10 +28,10 @@ function Page() {
 
       <EditExampleModal />
       <AddExampleModal />
-    </DashBody> */}
-    </>
-
+    
+      </>
+     </DashBody>
   )
 }
 
-export default Page
+export default ExamplePage

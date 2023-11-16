@@ -1,21 +1,15 @@
 
 .DashboardLayout {
-    display: flex;
-    gap: 10%;
-    color: var(--text);
+    color: var(--text); background: var(--bg);
     width: 100%;
     background-size: cover;
     background-position: center;
-    background-color: var(--bg);
-    // background-image: url("../../../public/Layout/mac.webp");
     min-height: 100vh;
     display: flex; justify-content: center; align-items: center;
     
 }
 
 .DashboardLayout_Cover{
-//     background-color: rgba(16 18 27 / 40%);
-//   backdrop-filter: blur(24px);
   min-height: 96vh;
   width: 98vw;
   border-radius: 20px;
@@ -109,11 +103,6 @@
 .szh-menu{
     background-color: var(--bg);
 }
-// .buGObk,.bPokRt,.isdzTY{
-//     color:var(--text) !important;
-//     background: var(--bg) !important;
-    
-//    }
 
 .modal-content{
     background-color: var(--bg) !important;
@@ -139,20 +128,7 @@
 
    .glass{
 
-    .modal {
-        display: flex;
-        gap: 10%;
-        color: var(--text);
-        width: 100%;
-        background-size: cover;
-        background-position: center;
-        background-color: var(--bg);
-        // background-image: url("../../../public/Layout/mac.webp");
-        min-height: 100vh;
-        display: flex; justify-content: center; align-items: center;
-        background-image: url("../../../public/Layout/mac.webp");
-
-    }
+    .modal {  @include GlassModeBG; }
     .DashboardLayout {
        
         background-image: url("../../../public/Layout/mac.webp");
@@ -160,13 +136,12 @@
         
     }
     .modal-content{
-        background-color: rgba(16 18 27 / 40%);
-        backdrop-filter: blur(24px);
+        @include GlassModeCover;
   
     }
     .DashboardLayout_Cover{
-            background-color: rgba(16 18 27 / 40%);
-          backdrop-filter: blur(24px);
+        @include GlassModeCover;
+
     
         
         }
@@ -187,22 +162,84 @@
     ::-webkit-scrollbar-thumb,::-webkit-scrollbar-thumb:hover {
         background:transparent no-repeat center center ; 
         background-size: cover;
-        &:hover{
-            background:var(--primary) no-repeat center center ; 
-
-     }
-    }
-        .Add_Button {
-            button{
-                background-color: transparent !important;
-                border: 2px solid transparent;
-                @include Shadow;
-                color: var(--text);
+        
             }
         }
-    }
-  
-    .SweetAlert {
-        background-color: rgba(10, 45, 200, 0.4);
-        // backdrop-filter: blur(24px);
+        .react-confirm-alert{
+            max-height: 100px;
+
         }
+        .react-confirm-alert > div > div > div{
+            @include GlassModeBG;
+            max-height: 100px;
+
+         }
+         .ViewPage{
+            .card-header{
+                padding: 25px 25px 0 25px;
+                background: var(--bg) !important;
+                color: var(--text);
+                border-bottom: none !important;
+                display: flex; justify-content: space-between;
+                .card-title{
+                    font-size: 2vw;
+                }
+                button{
+                    background: var(--primary) ;
+                    color: var(--bg);
+                    font-weight: bold;
+                    outline: none;
+                    border: none;
+                    min-width: 100px;
+                    max-height: 40px;
+                }
+            }
+            .react-tabs__tab-list{
+                z-index: 1;
+                display: flex;            
+            }
+            .react-tabs__tab{           
+         
+                flex: 1;
+                color: var(--text);
+
+            }
+            .react-tabs__tab--selected {
+                border-top: none; border-left: none; border-right: none;
+                border-bottom: 4px solid var(--primary);
+                color: var(--primary);
+                z-index: 99999;
+                background: var(--bg2);
+    
+            }
+           
+        }
+     
+           .react-tabs__tab::after{
+            border-bottom: 4px solid var(--primary) !important;
+
+        }
+        .progress, .progress-stacked{
+            background-color: var(--bg2) !important;
+        }
+
+            button{
+                background: none !important;
+                &:hover{
+                    @include Shadow;
+                }
+            }
+.react-confirm-alert div .sweet-alert{
+    background-color:transparent !important;
+    @include GlassModeCover;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+     .btn-primary{
+        background-color: transparent !important;
+        border: 1px solid var(--primary);
+    }
+   }
+   
+   
+    
+        

@@ -101,6 +101,9 @@ dependencies:
   react-select:
     specifier: ^5.7.7
     version: 5.7.7(@types/react@18.2.33)(react-dom@18.2.0)(react@18.2.0)
+  react-tabs:
+    specifier: ^6.0.2
+    version: 6.0.2(react@18.2.0)
   react-toastify:
     specifier: ^9.1.3
     version: 9.1.3(react-dom@18.2.0)(react@18.2.0)
@@ -9670,6 +9673,16 @@ packages:
       use-isomorphic-layout-effect: 1.1.2(@types/react@18.2.33)(react@18.2.0)
     transitivePeerDependencies:
       - '@types/react'
+    dev: false
+
+  /react-tabs@6.0.2(react@18.2.0):
+    resolution: {integrity: sha512-aQXTKolnM28k3KguGDBSAbJvcowOQr23A+CUJdzJtOSDOtTwzEaJA+1U4KwhNL9+Obe+jFS7geuvA7ICQPXOnQ==}
+    peerDependencies:
+      react: ^18.0.0
+    dependencies:
+      clsx: 2.0.0
+      prop-types: 15.8.1
+      react: 18.2.0
     dev: false
 
   /react-toastify@9.1.3(react-dom@18.2.0)(react@18.2.0):

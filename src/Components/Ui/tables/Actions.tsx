@@ -5,18 +5,21 @@ import CustomConfirmAlert from "../Alert";
 type TableActionsProps = {
   onDelete: () => any;
   onEdit: () => any;
+  onView:() => any;
+  showView?: boolean;
   showEdit?: boolean;
   showDelete?: boolean;
   children?: ReactNode;
 };
 
 
-const TableActions = ({ onDelete   , onEdit,showEdit=true,showDelete=true ,children }:TableActionsProps) => {
+const TableActions = ({ onDelete   , onEdit,onView,showEdit=true,showDelete=true,showView=true,children }:TableActionsProps) => {
 
   
   return (
     <div className="data-list-action TableActions">
-    {showEdit && <FaEdit onClick={onEdit} className="cursor-pointer m-1" size={20} />}
+    {showEdit && <FaEdit onClick={onEdit} className="cursor-pointer m-2" size={20} />}
+    {showView && <FaEye onClick={onView} className="cursor-pointer m-2" size={25} />}
 
     {showDelete && (
       <FaTrash

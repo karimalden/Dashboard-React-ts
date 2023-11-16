@@ -1,4 +1,4 @@
-import { lazy, Suspense } from 'react';
+import { Fragment, lazy, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom'
 import Loading from './Components/Utils/Loading/Loading';
 import { RoutesLinks } from './Routes';
@@ -14,10 +14,22 @@ const App = () => {
       <Route path="*" element={<Suspense fallback={<Loading />}> <Page404 /></Suspense>} />
       <Route path="/auth" element={<Suspense fallback={<Loading />}> <Auth /></Suspense>} />
       {RoutesLinks?.map((item: any, index: number) => (
-        <Route key={index} path={item.href} element={<Suspense fallback={<Loading />}>
-          <Layout>  {item?.element ?? "Please Add Elemnt Props in Routes"} </Layout></Suspense>} />))
+        
+        <Fragment key={index}>
+           <Route  path={item.href} element={<Suspense fallback={<Loading />}>
+          <Layout>  {item?.element ?? "Please Add Element Props in Routes"} </Layout></Suspense>} />
+          {item?.Viewelement?    <Route path={item?.Viewhref} element={<Suspense fallback={<Loading />}>
+          <Layout>  {item?.Viewelement ?? "Please Add Element Props in Routes"} </Layout></Suspense>} />
+          
+          : '' }
+        </Fragment>
+        
+          ))
       }
     </Routes>
+
+        
+     
   )
 }
 

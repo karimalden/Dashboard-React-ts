@@ -43,7 +43,9 @@ const useTableColumns :any = () => {
         center: "true",
         cell: (row) => (
             <Actions
-              onEdit={() => row}              
+              onEdit={() => row}     
+              onView={() => {}}    
+         
               // showDelete={false}
               onDelete={() => fnDelete({ id: row.id })}
             />
