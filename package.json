@@ -51,7 +51,19 @@
     "start": "PORT=3333 react-scripts start ",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "g:api" :"node src/Extensions/FileGenerator/generateApi.js",
+    "g:column" :"node src/Extensions/FileGenerator/generateColumn.js",
+    "g:formutil" :"node src/Extensions/FileGenerator/generateformUtils.js",
+    "g:page" :"node src/Extensions/FileGenerator/generatePage.js",
+    "g:dashboard" :"node src/Extensions/FileGenerator/generateDashboard.js ",
+    "g:modal:add" :"node src/Extensions/FileGenerator/generateEditModal.js ",
+    "g:model:edit" :"node src/Extensions/FileGenerator/generateEditModal.js "
+
+
+
+
+
   },
   "eslintConfig": {
     "extends": [

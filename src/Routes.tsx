@@ -4,6 +4,7 @@ import { lazy } from "react";
 import {BsHexagon} from 'react-icons/bs'
 import Page from "./Pages/Example2/Page";
 import ExampleView from "./Pages/Example/View/Page";
+// import Page from "./Pages/ttt/Page";
 
 
 
@@ -12,7 +13,7 @@ import ExampleView from "./Pages/Example/View/Page";
 const ExamplePage = lazy(() => import("./Pages/Example/Page"))
 
 
-export const RoutesLinks = [
+export const RoutesLinks = [ 
     {
         name: "example",
         href: "/",
@@ -23,8 +24,8 @@ export const RoutesLinks = [
 
     },
     {
-        name: "example2",
-        href: "/example2",
+        name: "test",
+        href: "/test",
         icon: <BsHexagon />,
         element: <Page />
     }
@@ -68,5 +69,13 @@ export const RoutesLinks = [
         element: <Page />
     }
   
+    
+    // {
+    //     name: "example2",
+    //     href: "/example2",
+    //     icon: <BsHexagon />,
+    //     element: <Page />
+    // },
+   
   
 ]
