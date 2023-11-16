@@ -20,6 +20,13 @@
   min-height: 100vh;
   display: flex; justify-content: center; align-items: center;
 }
+@mixin GlassBG{
+  background-image: url("../../../public/Layout/mac.webp");
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
 
 @mixin GlassModeCover{
   background-color: rgba(16 18 27 / 40%);

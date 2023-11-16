@@ -164,16 +164,44 @@
         background-size: cover;
         
             }
-        }
-        .react-confirm-alert{
-            max-height: 100px;
+            .react-tabs__tab::after{
+                border-bottom: 4px solid var(--primary) !important;
+    
+            }
+            .progress, .progress-stacked{
+                background-color: var(--bg2) !important;
+            }
+    
+                button{
+                    background: none !important;
+                    color: var(--primary);
+                    &:hover{
+                        // @include Shadow;
+                        // box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.05);
 
+                    }
+                }
+    .react-confirm-alert div .sweet-alert{
+        background-color:transparent !important;
+        @include GlassModeCover;
+        border: 1px solid var(--primary);
+        color: var(--primary);
+         .btn-primary{
+            background-color: transparent !important;
+            border: 1px solid var(--primary);
         }
-        .react-confirm-alert > div > div > div{
-            @include GlassModeBG;
-            max-height: 100px;
+       }
+       .react-confirm-alert{
+        max-height: 100px;
 
-         }
+    }
+    .react-confirm-alert > div > div > div{
+        @include GlassModeBG;
+        max-height: 100px;
+
+     }
+        }
+        
          .ViewPage{
             .card-header{
                 padding: 25px 25px 0 25px;
@@ -215,31 +243,21 @@
            
         }
      
-           .react-tabs__tab::after{
-            border-bottom: 4px solid var(--primary) !important;
-
-        }
-        .progress, .progress-stacked{
-            background-color: var(--bg2) !important;
-        }
-
-            button{
-                background: none !important;
-                &:hover{
-                    @include Shadow;
-                }
-            }
-.react-confirm-alert div .sweet-alert{
-    background-color:transparent !important;
-    @include GlassModeCover;
-    border: 1px solid var(--primary);
-    color: var(--primary);
-     .btn-primary{
-        background-color: transparent !important;
-        border: 1px solid var(--primary);
-    }
-   }
-   
+          
    
     
         
+        .glass{
+            .Add_Button{
+                button {
+                    box-shadow: 2px 2px 1px 0 var(--primary);
+            
+                   }
+                   
+                 
+                   button:hover {
+                    background-color: rgba(16 18 27 / 40%);
+                    backdrop-filter: blur(24px);
+                   }
+            }
+        }
