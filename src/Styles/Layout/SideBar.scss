@@ -132,13 +132,14 @@
         color: var(--bg);
         border-radius: 5px;
         box-shadow: 2px 2px 7px 0 transparent;
-    
-        svg {
-           
-            
-        }
+        background-color: rgba(16 18 27 / 1%);
+        backdrop-filter: blur(24px);
     }
     .SideBar_Link {
+        &:hover {
+            background-color: rgba(16 18 27 / 40%);
+            backdrop-filter: blur(24px);
+           }
         &:hover{
             background: transparent;
             color: var(--bg);

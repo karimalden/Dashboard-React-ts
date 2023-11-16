@@ -1,4 +1,5 @@
 
+/////  Layout
 .DashboardLayout {
     color: var(--text); background: var(--bg);
     width: 100%;
@@ -6,29 +7,30 @@
     background-position: center;
     min-height: 100vh;
     display: flex; justify-content: center; align-items: center;
+    .DashboardLayout_Cover{
+        min-height: 96vh;
+        width: 98vw;
+        border-radius: 20px;
+      
+      }
+      
+      .DashboardLayout_Body{
+          position: absolute;
+          left: 290px;
+          width: calc(98% - 290px);
+          
+      }   
+      .DashboardLayout_Body_Open{
+          left: 140px;
+          width: calc(98% - 140px);
+          transition: 1s ease-in-out;
+      
+      
+      }
+  
     
 }
-
-.DashboardLayout_Cover{
-  min-height: 96vh;
-  width: 98vw;
-  border-radius: 20px;
-
-}
-
-.DashboardLayout_Body{
-    position: absolute;
-    left: 290px;
-    width: calc(98% - 290px);
-    
-}   
-.DashboardLayout_Body_Open{
-    left: 140px;
-    width: calc(98% - 140px);
-    transition: 1s ease-in-out;
-
-
-}
+///// Arabic Mood
 .ar{
     .DashboardLayout_Body{
         right: 290px;
@@ -44,7 +46,7 @@
 }
 
 .card {
-    background: var(--bg);
+background: var(--bg);
  @include Shadow;
  outline: none !important;
  border: none !important;
@@ -126,42 +128,44 @@
     background-color:var(--bg) !important;
    }
 
-   .glass{
-
-    .modal {  @include GlassModeBG; }
-    .DashboardLayout {
-       
-        background-image: url("../../../public/Layout/mac.webp");
-
-        
-    }
-    .modal-content{
-        @include GlassModeCover;
-  
-    }
-    .DashboardLayout_Cover{
-        @include GlassModeCover;
-
-    
-        
-        }
-        .LayoutBody{
-            overflow-y: scroll;
-            height: 400px;
-        }
-    }
-
-
   
 
     
     .glass{
+        .modal {  @include GlassModeBG; }
+        .DashboardLayout {
+           
+            background-image: url("../../../public/Layout/mac.webp");
+    
+            
+        }
+        .modal-content{
+            @include GlassModeCover;
+      
+        }
+        .DashboardLayout_Cover{
+            @include GlassModeCover;
+    
+        
+            
+            }
+            .LayoutBody{
+                overflow-y: scroll;
+                height: 400px;
+            }
 
     ::-webkit-scrollbar { min-width: 15px; width: 100%; } 
     ::-webkit-scrollbar-track { box-shadow: inset 0 0 5px var(--primary); }
-    ::-webkit-scrollbar-thumb,::-webkit-scrollbar-thumb:hover {
+    ::-webkit-scrollbar-thumb {
         background:transparent no-repeat center center ; 
         background-size: cover;
+        &:hover{
+
+            background:var(--primary) no-repeat center center ; 
+            cursor: pointer !important;
+
+        }
+        
         
             }
             .react-tabs__tab::after{
@@ -175,11 +179,7 @@
                 button{
                     background: none !important;
                     color: var(--primary);
-                    &:hover{
-                        // @include Shadow;
-                        // box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.05);
-
-                    }
+                  
                 }
     .react-confirm-alert div .sweet-alert{
         background-color:transparent !important;
@@ -187,8 +187,12 @@
         border: 1px solid var(--primary);
         color: var(--primary);
          .btn-primary{
-            background-color: transparent !important;
+            background-color: transparent ;
             border: 1px solid var(--primary);
+            &:hover {
+                background-color: rgba(16 18 27 / 40%);
+                backdrop-filter: blur(24px);
+               }
         }
        }
        .react-confirm-alert{
@@ -200,6 +204,27 @@
         max-height: 100px;
 
      }
+     .Add_Button{
+        button {
+            box-shadow: 2px 2px 1px 0 var(--primary);
+    
+           }
+           
+         
+           button:hover {
+            background-color: rgba(16 18 27 / 40%);
+            backdrop-filter: blur(24px);
+           }
+    }
+    .btn-secondary{
+            box-shadow: 2px 2px 1px 0 var(--primary);
+    
+           
+    &:hover {
+            background-color: rgba(16 18 27 / 40%);
+            backdrop-filter: blur(24px);
+           }
+    }
         }
         
          .ViewPage{
@@ -243,21 +268,4 @@
            
         }
      
-          
-   
     
-        
-        .glass{
-            .Add_Button{
-                button {
-                    box-shadow: 2px 2px 1px 0 var(--primary);
-            
-                   }
-                   
-                 
-                   button:hover {
-                    background-color: rgba(16 18 27 / 40%);
-                    backdrop-filter: blur(24px);
-                   }
-            }
-        }
