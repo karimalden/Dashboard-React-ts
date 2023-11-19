@@ -283,9 +283,23 @@
    
    .ImagePreview_hasValue{
     margin-top: 10px;
-    border: 1px solid var(--primary);
+    border: 2px solid var(--primary);
     height: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
    }
+   input::file-selector-button {
+    font-weight: bold;
+    color: var(--text) !important;
+    background-color: var(--bg) !important;
+    padding: 0.5em;
+    // border: thin solid grey;
+    border-radius: 3px;
+  }
+  input:focus{
+      background-color: var(--bg) !important;
+  }
+  .image_preview_text{
+    color:var(--text)
+  }

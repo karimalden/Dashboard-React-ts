@@ -142,7 +142,7 @@ const KarimField: React.FC<KarimFieldProps> = ({ name,name2,type,placeholder,lab
           alt=""
         />
       ) : (
-        <div>{t("image_preview")}</div>
+        <div className="image_preview_text">{t("image_preview")}</div>
       )}
     </div>
     </div>
