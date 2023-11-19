@@ -14,8 +14,9 @@ function AddExampleModal() {
   const handelSubmit = (values:any )=>{
 
     const dataToSend = getDataToSend(values)
+      console.log(values,"dataToSend");
 
-    mutate(dataToSend)
+    // mutate(dataToSend)
     // Submit Value
   }
   return (

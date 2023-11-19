@@ -270,3 +270,22 @@
       background-color: transparent !important;
      }
    }
+
+
+   .ImagePreview{
+    margin-top: 10px;
+    border: 1px solid lightgray;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   }
+   
+   .ImagePreview_hasValue{
+    margin-top: 10px;
+    border: 1px solid var(--primary);
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   }

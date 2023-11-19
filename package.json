@@ -48,7 +48,7 @@
     "zustand": "^4.4.5"
   },
   "scripts": {
-    "start": "PORT=3333 react-scripts start ",
+    "start": "PORT=3333 react-scripts start & json-server --watch db.json",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
@@ -59,7 +59,7 @@
     "g:dashboard" :"node src/Extensions/FileGenerator/generateDashboard.js ",
     "g:modal:add" :"node src/Extensions/FileGenerator/generateEditModal.js ",
     "g:model:edit" :"node src/Extensions/FileGenerator/generateEditModal.js "
-
+     
 
 
 

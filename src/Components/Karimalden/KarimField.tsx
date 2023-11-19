@@ -2,7 +2,7 @@ import { KarimFieldProps } from "../../Layout/app/Types";
 import "./KarimField.scss";
 import {useState, ErrorMessage, useField, Field, useFormikContext, useTranslation, FaExclamationCircle, Select, convert_data_to_select, } from './'
 import { hasValue } from "../../Layout/app/Const";
-
+import { FaUpload } from "react-icons/fa";
 
 
 const KarimField: React.FC<KarimFieldProps> = ({ name,name2,type,placeholder,label,className = "",option = [],isMulti, Disabled ,group, ...props}) => {
@@ -27,8 +27,20 @@ const KarimField: React.FC<KarimFieldProps> = ({ name,name2,type,placeholder,lab
   const handleFirstDateChange = (event: any) => {
     const { value } = event.target;
     setFirstDate(value);
+    
   };
 
+
+  const [selectedFile, setSelectedFile] = useState(null);
+
+  const handleFileChange = (event:any) => {
+    const file = event.currentTarget.files[0];
+      formik.setFieldValue(name , file)
+      setSelectedFile(file);
+
+  
+  };
+        
   if (type === "checkbox") {
     return (
       <div className="KarimCheckbox">
@@ -101,7 +113,42 @@ const KarimField: React.FC<KarimFieldProps> = ({ name,name2,type,placeholder,lab
         </div>
       </div>
     );
-  } else {
+  } else if (type === "file") {
+    return (
+      <div className="KarimField">
+      <label htmlFor={name} className="text">
+        {isError ? <span className='isErrorIcon'> <FaExclamationCircle /></span> : ""} {label} {""}
+        <ErrorMessage name={name}>
+          {(msg: any) => <span className="field-error text-danger isErrorIcon">{t(msg)} <FaExclamationCircle /> </span>}
+        </ErrorMessage> 
+      </label>
+      <input
+        type={type}
+        placeholder={placeholder}
+       
+        className={selectedFile ?  ` hasValue form-control ` :  ` form-control ` }
+          onChange={handleFileChange}
+
+      />
+         <div  className={selectedFile ?  ` ImagePreview_hasValue ` :  ` ImagePreview ` }>
+      {selectedFile ? (
+        <img
+          className="p-1"
+          style={{
+            maxWidth: "100%",
+          }}
+          height={200}
+          src={URL.createObjectURL(formik.values[name] || selectedFile)}
+          alt=""
+        />
+      ) : (
+        <div>{t("image_preview")}</div>
+      )}
+    </div>
+    </div>
+      );
+    }
+  else {
     return (
       <div className="KarimField">
         <label htmlFor={field.name} className="text">
@@ -116,6 +163,7 @@ const KarimField: React.FC<KarimFieldProps> = ({ name,name2,type,placeholder,lab
           name={field.name}
           className={inputClass}
         />
+      
       </div>
     );
   }

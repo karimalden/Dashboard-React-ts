@@ -16,11 +16,12 @@ const ExamplePage = lazy(() => import("./Pages/Example/Page"))
 
 interface RoutesLinksType {
     name:string ,
-    href:string,
+    href?:string,
     element:ReactNode,
     icon:any,
     Viewelement?:ReactNode,
     Viewhref?:string
+    children?:any
 }
 export const RoutesLinks: RoutesLinksType[] = [ 
     {
@@ -37,16 +38,25 @@ export const RoutesLinks: RoutesLinksType[] = [
         href:"/test",
         icon:<BsHexagon/>,
         name:"test",
+      
 
-    }
+    },
 
-    
-    // {
-    //     name: "example2",
-    //     href: "/example2",
-    //     icon: <BsHexagon />,
-    //     element: <Page />
-    // },
+    {
+        name: "example2",
+        // href: "/example2",
+        icon: <BsHexagon />,
+        element: <Page />,
+        children:[
+            { 
+             element:<Test2Page/>,
+             href:"/test",
+             icon:<BsHexagon/>,
+             name:"test",
+            }
+         ]
+    },
+
    
   
 ]

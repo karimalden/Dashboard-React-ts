@@ -31,7 +31,6 @@ const SideBar = () => {
         <div onClick={()=>Onimg()}>
           <KarimLogo/>
         </div>
-        {/* <img alt='SideBarLogo' src={SideBarLogoUrl} loading='lazy' width={60} height={40} /> */}
         <div className='HamburgerMenu' onClick={()=> OnHamburgerMenu()} >
           <GiHamburgerMenu />
 

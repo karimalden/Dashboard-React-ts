@@ -13,19 +13,21 @@ function FormExample() {
   return (
     <Row xs={1} sm={1} md={1} lg={2} xl={2}>
     <Col>
-    <KarimField name="name" type="text"label='name'  placeholder='placeholder' />
-    <KarimField name="number" type="number" label='number' placeholder='placeholder' />
+    {/* <KarimField name="name" type="text"label='name'  placeholder='placeholder' /> */}
+    {/* <KarimField name="number" type="number" label='number' placeholder='placeholder' />
     <KarimField name="select" type="select"label='select'  option={FakeSelectData} isMulti={true} placeholder='placeholder'  />
-    <KarimField name="Multiselect" type="select"label='Multiselect'  option={FakeSelectData} Disabled={false} placeholder='placeholder'/>
+    <KarimField name="Multiselect" type="select"label='Multiselect'  option={FakeSelectData} Disabled={false} placeholder='placeholder'/> */}
 
     
     </Col>
     <Col>
-   <KarimField name="date" type="date" label='date' placeholder='placeholder' />
+   {/* <KarimField name="date" type="date" label='date' placeholder='placeholder' />
    <KarimField name="time" type="text"label='time'  placeholder='placeholder' />
    <KarimField name="CheckBox" name2='CheckBox2' type="checkbox" label='CheckBox' placeholder='placeholder' group={true} />
 
-   <KarimField name="DateFrom" name2="DateTo" type="DataRange"     />
+   <KarimField name="DateFrom" name2="DateTo" type="DataRange"     /> */}
+
+    <KarimField name="file" type="file" label='name'  placeholder='placeholder' />
 
     </Col>
 
