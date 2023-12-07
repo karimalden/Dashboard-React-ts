@@ -18,26 +18,6 @@ const useTableColumns :any = () => {
         center: "true",
         cell: (row:any) => row?.id
       },
-      {
-        name: `${t("name")}`,
-        sortable: false,
-        center: "true",
-        cell: (row:any) => row?.name
-      },
-
-      {
-        name: `${t("username")}`,
-        sortable: false,
-        center: "true",
-        cell: (row:any) => row?.username
-      },
-
-      {
-        name: `${t("password")}`,
-        sortable: false,
-        center: "true",
-        cell: (row:any) => row?.password
-      },
      
       {
         name: "#",

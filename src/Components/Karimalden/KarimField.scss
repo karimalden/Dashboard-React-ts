@@ -303,3 +303,29 @@
   .image_preview_text{
     color:var(--text)
   }
+  .btn-close {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    background: none !important;
+
+  }
+  
+  .btn-close::before,
+  .btn-close::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    width: 2px;
+    height: 60%;
+    background:var(--text) !important;
+  }
+  
+  .btn-close::before {
+    transform: rotate(45deg);
+  }
+  
+  .btn-close::after {
+    transform: rotate(-45deg);
+  }
+  

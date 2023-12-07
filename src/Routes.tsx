@@ -22,6 +22,7 @@ interface RoutesLinksType {
     Viewelement?:ReactNode,
     Viewhref?:string
     children?:any
+    hidden?: boolean
 }
 export const RoutesLinks: RoutesLinksType[] = [ 
     {
@@ -33,29 +34,16 @@ export const RoutesLinks: RoutesLinksType[] = [
         Viewhref: "/:id"
 
     },
-    {
-        element:<Test2Page/>,
-        href:"/test",
-        icon:<BsHexagon/>,
-        name:"test",
-      
-
-    },
-
-    {
+     {
         name: "example2",
-        // href: "/example2",
-        icon: <BsHexagon />,
-        element: <Page />,
-        children:[
-            { 
-             element:<Test2Page/>,
-             href:"/test",
-             icon:<BsHexagon/>,
-             name:"test",
-            }
-         ]
-    },
+        href: "/example2",
+        icon: <BsHexagon/> ,
+        element: <ExamplePage />,
+        Viewelement: <ExampleView />,
+        Viewhref: "/:id",
+        hidden : true
+
+    }
 
    
   

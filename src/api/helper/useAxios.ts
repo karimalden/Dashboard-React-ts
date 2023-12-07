@@ -1,9 +1,10 @@
 import axios from 'axios'
-import { BaseURL } from '../config'
 function useAxios() {
   return (
     axios.create({
-        baseURL:BaseURL  
+        baseURL:"https://api.rayantaxi.com/"  ,
+         headers: {'Authorization': "Bearer 1833|laravel_sanctum_B07XNS7e11Khh3VMjkN4AW8s50rF5qZWoMKtYrag7b297adb"}
+        
     })
   )
 }

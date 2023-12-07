@@ -41,6 +41,7 @@ const SideBar = () => {
         {
           RoutesLinks?.map((i:any, index:number) => {
             const isActive = pathname === i?.href;
+            if(i?.hidden){ return null}
 
             if (i?.href) {
               return (

@@ -5,7 +5,7 @@ import { hasValue } from "../../Layout/app/Const";
 import { FaUpload } from "react-icons/fa";
 
 
-const KarimField: React.FC<KarimFieldProps> = ({ name,name2,type,placeholder,label,className = "",option = [],isMulti, Disabled ,group, ...props}) => {
+const KarimField: React.FC<KarimFieldProps> = ({ name,name2,type,placeholder,label,className = "",option = [],isMulti, Disabled=false ,group, ...props}) => {
   const { t } = useTranslation();
   const [field, meta] = useField({ name, ...props });
   const formik = useFormikContext<any>();
@@ -162,6 +162,7 @@ const KarimField: React.FC<KarimFieldProps> = ({ name,name2,type,placeholder,lab
           placeholder={placeholder}
           name={field.name}
           className={inputClass}
+          disabled={Disabled}
         />
       
       </div>
