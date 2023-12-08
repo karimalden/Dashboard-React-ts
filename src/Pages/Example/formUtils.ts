@@ -38,22 +38,21 @@ file:any
 interface ValidateSchema  extends formUtilCommon{
 
 }
+const today = new Date()
 
-export const getInitialValues = (objectToEdit: ObjectToEdit | null = null): InitialValues => {
-
-  
+export const getInitialValues = (objectToEdit: ObjectToEdit | null = null): InitialValues => {  
   return {
     name:objectToEdit?.name?? "" ,
     number:objectToEdit?.number?? "" ,
-    date:objectToEdit?.date?? "" ,
+    date:objectToEdit?.date?? [],
     time:objectToEdit?.time?? "" ,
     CheckBox:objectToEdit?.CheckBox?? 1 ,
-    select:objectToEdit?.select ,
+    select:objectToEdit?.select ?? [ {  value : 1,  label : "default value"}],
     Multiselect:objectToEdit?.Multiselect ,
     DateFrom:objectToEdit?.DateFrom ,
     DateTo:objectToEdit?.DateTo ,
     CheckBox2:objectToEdit?.CheckBox2 ,
-    file:objectToEdit?.file ,
+    file:objectToEdit?.file ??"",
 
     
 
@@ -68,10 +67,10 @@ export const getValidationSchema = (editMode: boolean = false): Yup.Schema<Valid
   return Yup.object().shape({
     // file:Yup.string().required('is required '),
     
-    // number:Yup.string().required('is required '),
-    // date:Yup.string().required('is required '),
+    name:Yup.string().required('is required '),
+    // date:Yup.array().required('is required '),
     // time:Yup.string().required('is required '),
-    // select:Yup.object().required('is required '),
+    // select:Yup.array().required('is required '),
   });
 };
 

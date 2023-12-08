@@ -25,7 +25,7 @@ interface RoutesLinksType {
     hidden?: boolean
 }
 export const RoutesLinks: RoutesLinksType[] = [ 
-    {
+      {
         name: "example",
         href: "/",
         icon: <BsHexagon/> ,
@@ -33,15 +33,36 @@ export const RoutesLinks: RoutesLinksType[] = [
         Viewelement: <ExampleView />,
         Viewhref: "/:id"
 
-    },
-     {
-        name: "example2",
-        href: "/example2",
-        icon: <BsHexagon/> ,
+    }
+    , {
+        name: "order",
+        // type: "item",
+        icon: <BsHexagon size={20} />,
+        // href: "/order",
         element: <ExamplePage />,
-        Viewelement: <ExampleView />,
-        Viewhref: "/:id",
-        hidden : true
+        children :[
+              {
+        name: "categories",
+        icon: <BsHexagon size={20} />,
+        href: "/categories",
+        element: <ExamplePage />
+    },
+          {
+        name: "example2",
+        icon: <BsHexagon size={20} />,
+        href: "/example2",
+        element: <ExamplePage />
+    },
+          {
+        name: "categories",
+        icon: <BsHexagon size={20} />,
+        href: "/categories",
+        element: <ExamplePage />
+    }
+
+        ],
+
+
 
     }
 

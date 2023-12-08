@@ -1,130 +1,99 @@
-import { SideBarLogoUrl } from './Const'
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import { FaAngleDown, FaAngleRight } from 'react-icons/fa';
-import { GiHamburgerMenu } from "react-icons/gi";
-import { Link } from "react-router-dom";
-import { useLocation } from 'react-router-dom';
+import { GiHamburgerMenu } from 'react-icons/gi';
+import { Link, useLocation } from 'react-router-dom';
 import { RoutesLinks } from '../../Routes';
 import { useTranslation } from 'react-i18next';
 import KarimLogo from './KarimLogo';
 
-const SideBar = () => {
-  const {pathname} = useLocation();
+interface SidebarProps {}
 
-  const [Isopen, setIsopen] = useState<boolean>(false)
-  const [IsopenSide, setIsopenSide] = useState<boolean>(false)
-    const OnHamburgerMenu = ()=>{
-      setIsopenSide(true)
-      document.getElementById("DashboardLayout_Body")?.classList.add("DashboardLayout_Body_Open")
-      }
-      const Onimg= ()=>{
-        setIsopenSide(false)
-        document.getElementById("DashboardLayout_Body")?.classList.remove("DashboardLayout_Body_Open")
+const Sidebar: React.FC<SidebarProps> = () => {
+  const { pathname } = useLocation();
 
-        }
-        const [t] = useTranslation();
+  const [isOpenSide, setIsOpenSide] = useState<boolean>(false);
+  const [openDropdown, setOpenDropdown] = useState<number | null>(null);
+  const [t] = useTranslation();
 
+  const handleHamburgerMenu = () => {
+    setIsOpenSide(true);
+    document.getElementById('DashboardLayout_Body')?.classList.add('DashboardLayout_Body_Open');
+  };
+
+  const handleImg = () => {
+    setIsOpenSide(false);
+    document.getElementById('DashboardLayout_Body')?.classList.remove('DashboardLayout_Body_Open');
+    setOpenDropdown(null); 
+  };
+
+  const handleDropdown = (index: number) => {
+    setOpenDropdown((prev) => (prev === index ? null : index));
+  };
 
   return (
-    <div className={IsopenSide ? "SideBar SideBar_Open" : 'SideBar'}>
+    <div className={isOpenSide ? 'SideBar SideBar_Open' : 'SideBar'}>
       <div className='SideBar_Top'>
-        <div onClick={()=>Onimg()}>
-          <KarimLogo/>
+        <div onClick={handleImg}>
+          <KarimLogo />
         </div>
-        <div className='HamburgerMenu' onClick={()=> OnHamburgerMenu()} >
+        <div className='HamburgerMenu' onClick={handleHamburgerMenu}>
           <GiHamburgerMenu />
-
         </div>
-
       </div>
       <div className='RoutesLinks'>
-        {
-          RoutesLinks?.map((i:any, index:number) => {
-            const isActive = pathname === i?.href;
-            if(i?.hidden){ return null}
+        {RoutesLinks?.map((item: any, index: number) => {
+          const isActive = pathname === item?.href;
+          const isDropdownOpen = openDropdown === index;
 
-            if (i?.href) {
-              return (
-        
-                  <Link
-                    to={i?.href}
-                    className={isActive ? 'SideBar_Link Active_SideBar_Link' : 'SideBar_Link'}
-                    key={index}
-                  >
-                    {(i?.icon )}
-                    <div className='Link_Text'>
-                      {t(`${i?.name}`)}
+          if (item?.hidden) {
+            return null;
+          }
 
-                    </div>
-                  </Link>
-
-              )
-            }
-            else {
-              return (
-                <React.Fragment key={index} >
-                  <div
-                  onClick={() => setIsopen(v => !v)}
-                    className={Isopen ? 'SideBar_Link DropDown  DropDown_SideBar_Link' : 'SideBar_Link DropDown'}
-                    key={index}
-
-                  >
-                    <div >
-                    {i?.icon}
-                    </div>
-                    
-                    <div className='DropDown_Text'>
-                      {t(`${i?.name}`)}
-
-                    </div>
-                    <div className='DropDown_Svg' >
-                     {Isopen ? <FaAngleDown /> :  <FaAngleRight />
-
-                     }
-
-                    </div>
-                  </div>
-                  {Isopen ?
-
-                    i?.children?.map((i:any, index:number) => {
-                      if (i?.href) {
-                        return (
-                          <React.Fragment key={index}>
-                            <Link
-                              to={i?.href}
-                              className={'SideBar_Link'}
-                            >
-                              {i?.icon}
-                              <div className='Link_Text'>
-                              {t(`${i?.name}`)}
-
-                              </div>
-                            </Link>
-
-                          </React.Fragment>
-
-                        )
-                      }
-                      return null
-                    }
-
-                    )
-                    : ""
-
+          if (item?.href) {
+            return (
+              <Link
+                to={item?.href}
+                className={isActive ? 'SideBar_Link Active_SideBar_Link' : 'SideBar_Link'}
+                key={index}
+              >
+                {item?.icon}
+                <div className='Link_Text'>{t(`${item?.name}`)}</div>
+              </Link>
+            );
+          } else {
+            return (
+              <React.Fragment key={index}>
+                <div
+                  onClick={() => handleDropdown(index)}
+                  className={
+                    isDropdownOpen
+                      ? 'SideBar_Link DropDown DropDown_SideBar_Link Open'
+                      : 'SideBar_Link DropDown'
                   }
-                </React.Fragment>
-
-              )
-            }
-
-          })
-        }
-
-
-
+                >
+                  <div>{item?.icon}</div>
+                  <div className='DropDown_Text'>{t(`${item?.name}`)}</div>
+                  <div className='DropDown_Svg'>{isDropdownOpen ? <FaAngleDown /> : <FaAngleRight />}</div>
+                </div>
+                {isDropdownOpen &&
+                  item?.children?.map((child: any, childIndex: number) => {
+                    if (child?.href) {
+                      return (
+                        <Link to={child?.href} className={'SideBar_Link'} key={childIndex}>
+                          {child?.icon}
+                          <div className='Link_Text'>{t(`${child?.name}`)}</div>
+                        </Link>
+                      );
+                    }
+                    return null;
+                  })}
+              </React.Fragment>
+            );
+          }
+        })}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default SideBar
+export default Sidebar;

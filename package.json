@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@ant-design/icons": "^5.2.6",
     "@szhsin/react-menu": "github:szhsin/react-menu",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -52,18 +53,13 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "g:api" :"node src/Extensions/FileGenerator/generateApi.js",
-    "g:column" :"node src/Extensions/FileGenerator/generateColumn.js",
-    "g:formutil" :"node src/Extensions/FileGenerator/generateformUtils.js",
-    "g:page" :"node src/Extensions/FileGenerator/generatePage.js",
-    "g:dashboard" :"node src/Extensions/FileGenerator/generateDashboard.js ",
-    "g:modal:add" :"node src/Extensions/FileGenerator/generateEditModal.js ",
-    "g:model:edit" :"node src/Extensions/FileGenerator/generateEditModal.js "
-     
-
-
-
-
+    "g:api": "node src/Extensions/FileGenerator/generateApi.js",
+    "g:column": "node src/Extensions/FileGenerator/generateColumn.js",
+    "g:formutil": "node src/Extensions/FileGenerator/generateformUtils.js",
+    "g:page": "node src/Extensions/FileGenerator/generatePage.js",
+    "g:dashboard": "node src/Extensions/FileGenerator/generateDashboard.js ",
+    "g:modal:add": "node src/Extensions/FileGenerator/generateEditModal.js ",
+    "g:model:edit": "node src/Extensions/FileGenerator/generateEditModal.js "
   },
   "eslintConfig": {
     "extends": [

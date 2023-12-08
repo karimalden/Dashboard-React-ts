@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@ant-design/icons':
+    specifier: ^5.2.6
+    version: 5.2.6(react-dom@18.2.0)(react@18.2.0)
   '@szhsin/react-menu':
     specifier: github:szhsin/react-menu
     version: github.com/szhsin/react-menu/a7ba87a22881d0a29fa6f609b35e35aeddb75d2e(react-dom@18.2.0)(react@18.2.0)

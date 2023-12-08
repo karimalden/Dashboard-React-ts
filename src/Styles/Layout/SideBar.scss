@@ -9,6 +9,15 @@
     background: var(--bg);
     transition: .3s ease-in-out;
 @include Shadow;
+overflow-y: auto;
+&::-webkit-scrollbar {
+  width: 7px; 
+}
+
+&::-webkit-scrollbar-thumb {
+  background-color: var(--primary);   
+  border-radius: 10px;
+}
 
 }
 

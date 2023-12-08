@@ -15,4 +15,5 @@ export  interface FormTableState {
     isMulti?: boolean;
     Disabled?: boolean;
     group ? : boolean
+    props ? : any
   };

@@ -8,28 +8,57 @@ const Page404 = lazy(() => import("./Layout/app/NotFoundPage"))
 
 const App = () => {
 
-  
+
   return (
-    <Routes>
+    <Routes >
+      {/* 404 Page */}
       <Route path="*" element={<Suspense fallback={<Loading />}> <Page404 /></Suspense>} />
-      <Route path="/auth" element={<Suspense fallback={<Loading />}> <Auth /></Suspense>} />
+      {/* Login Page  */}
+      <Route path="/auth" element={<Suspense fallback={<Loading />}> <Auth /></Suspense>} />      
+
+{/* route */}
+      {/* All Routes */}
       {RoutesLinks?.map((item: any, index: number) => (
-        
+
         <Fragment key={index}>
-           <Route  path={item.href} element={<Suspense fallback={<Loading />}>
-          <Layout>  {item?.element ?? "Please Add Element Props in Routes"} </Layout></Suspense>} />
-          {item?.Viewelement?    <Route path={item?.Viewhref} element={<Suspense fallback={<Loading />}>
-          <Layout>  {item?.Viewelement ?? "Please Add Element Props in Routes"} </Layout></Suspense>} />
+
+        if(item?.element){
+            <Route 
+          path={item.href}
+           element={
+          <Suspense fallback={<Loading />} >
+            <Layout>  
+              {item?.element ?? "Please Add Element Props in Routes"}
+            </Layout>
+           </Suspense>
+           } 
+            />
+        }else{
+          item?.children?.map((item:any)=>{
+            return(
+              <Route 
+          path={item.href}
+           element={
+          <Suspense fallback={<Loading />} >
+            <Layout>  
+              {item?.element ?? "Please Add Element Props in Routes"}
+            </Layout>
+           </Suspense>
+           } 
+            />
+            )
+          })
           
-          : '' }
-        </Fragment>
+        }
         
-          ))
+        </Fragment>
+
+      ))
       }
     </Routes>
 
-        
-     
+
+
   )
 }
 
