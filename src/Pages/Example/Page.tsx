@@ -18,13 +18,13 @@ function ExamplePage() {
       <>
         <DashHeader title={'Example'}></DashHeader>
 
-        {/* <LyTable
+        <LyTable
           data={data?.data?.data}
           isLoading={false}
           columns={column}
           is_pagination={true}
           total={data?.data?.pagination?.total}
-        /> */}
+        />
 
 
 

@@ -2,7 +2,7 @@ import { Form, Select } from 'antd'
 import React from 'react'
 import useFormField from '../../../Hooks/useFormField';
 
-const SelectField = ({ name, label, placeholder, isDisabled,option,isMulti, props }: any) => {
+const SelectField = ({ name, label, placeholder, isDisabled,option,isMulti,onChange, props }: any) => {
 
   const {  errorMsg, isError, t ,formik} = useFormField(name, props)
   const SelecthandleChange = (value: { value: string; label: React.ReactNode }) => {
@@ -26,7 +26,7 @@ const SelectField = ({ name, label, placeholder, isDisabled,option,isMulti, prop
             defaultValue={formik.values[name]}
             allowClear
             {...(isMulti && { mode: "multiple" })}
-            onChange={SelecthandleChange}
+            onChange={onChange || SelecthandleChange}
 
 
 

@@ -1,6 +1,6 @@
-import { useField, useFormikContext } from 'formik'; 
+import { useField, useFormikContext } from 'formik';
 import { useTranslation } from 'react-i18next';
-import { Field } from 'formik'
+import { Field } from 'formik';
 
 const useFormField = (name: string, props?: any) => {
   const [field, meta] = useField({ name, ...props });

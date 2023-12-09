@@ -2,19 +2,19 @@ import { Form, Input } from 'antd'
 import React from 'react'
 import useFormField from '../../../Hooks/useFormField';
 
-const Default = ({ name, label, placeholder, isDisabled, props }: any) => {
-
-  const { Field, errorMsg, isError, t } = useFormField(name, props)
+const Default = ({ name, label, placeholder, isDisabled, onChange, props }: any) => {
+  const { Field, formik, isError, errorMsg, t } = useFormField(name, props);
+  
 
   return (
     <div className="KarimField">
       <label htmlFor={name} className="text">
         {t(`${label}`)}
-      </label>
+        </label>
       <Form.Item
         hasFeedback
-        validateStatus={isError ? "error" : ""}
-        help={isError ? (errorMsg) : ""}
+        validateStatus={isError ? 'error' : ''}
+        help={isError ? errorMsg : ''}
       >
         <Field
           as={Input}
@@ -22,14 +22,11 @@ const Default = ({ name, label, placeholder, isDisabled, props }: any) => {
           placeholder={t(`${placeholder}`)}
           name={name}
           disabled={isDisabled}
-
+        //  onChange={onChange ? onChange : handleChange}
         />
       </Form.Item>
-
-
-
     </div>
-  )
-}
+  );
+};
 
-export default Default
+export default Default;

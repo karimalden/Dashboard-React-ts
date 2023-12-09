@@ -1,7 +1,6 @@
 
 import React from 'react'
 import { Col, Row } from 'reactstrap';
-import KarimField from '../../Components/Karimalden/KarimField';
 import { FakeSelectData } from '../../Layout/app/Const';
 import { useFormikContext } from 'formik';
 
@@ -14,7 +13,6 @@ function FormTest2() {
   return (
     <Row xs={1} sm={1} md={1} lg={2} xl={2}>
     <Col>
-    <KarimField name="name" type="text"label='name'  placeholder='placeholder' />
     {/* <KarimField name="number" type="number" label='number' placeholder='placeholder' />
     <KarimField name="select" type="select"label='select'  option={FakeSelectData} isMulti={true} placeholder='placeholder'  />
     <KarimField name="Multiselect" type="select"label='Multiselect'  option={FakeSelectData} Disabled={true} placeholder='placeholder'/> */}
