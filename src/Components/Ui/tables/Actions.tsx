@@ -1,7 +1,7 @@
 import React , {ReactNode} from "react";
 import { FaEdit, FaEye, FaTrash } from "react-icons/fa";
 import CustomConfirmAlert from "../Alert";
-import { usePageState } from "../../../lib/state";
+import { usePageState } from "../../../lib/state mangment/LayoutPagestate";
 
 type TableActionsProps = {
   onDelete: () => any;

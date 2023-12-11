@@ -24,7 +24,9 @@ const Time = ({ name, label,props }: any) => {
               <TimePicker
                 allowClear
                 className='w-100'
+                defaultValue={formik.values[name]}
               onChange={onCalendarChange} />
+              
 
 
 

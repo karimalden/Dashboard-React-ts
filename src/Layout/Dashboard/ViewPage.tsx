@@ -4,6 +4,7 @@ import { Formik, Form } from "formik";
 import { LoadingButton } from "../../Components/Ui/LoadingButton";
 import ProgressBar from "../../Components/Ui/ProgressBar";
 import { useNavigate } from "react-router-dom";
+import { usePageState } from "../../lib/state mangment/LayoutPagestate";
 
 type TViewPage ={
   children: React.ReactNode,
@@ -11,12 +12,12 @@ type TViewPage ={
    getValidationSchema:any,
    getDataToSend:any,
    handleSubmit:any,
-   BarStatus:any
- 
+   BarStatus:any,
 
 }
 const ViewPage: React.FC<TViewPage>=  ({children,getInitialValues, getValidationSchema,getDataToSend,handleSubmit,BarStatus})=> {
 
+    const {objectToEdit} = usePageState()
 
   const navigate = useNavigate();
   return (
@@ -31,7 +32,7 @@ const ViewPage: React.FC<TViewPage>=  ({children,getInitialValues, getValidation
         {
            <Formik
            onSubmit={values => handleSubmit(getDataToSend(values))}
-           initialValues={getInitialValues([])}
+           initialValues={getInitialValues(objectToEdit)}
            validationSchema={getValidationSchema()}
         >
           {(formik) => (
@@ -48,7 +49,7 @@ const ViewPage: React.FC<TViewPage>=  ({children,getInitialValues, getValidation
                   <LoadingButton
                     type="submit"
                     color="primary"
-                    isLoading={false}
+                    isLoading={BarStatus?.isLoading}
                   >
                     {("save")}
                   </LoadingButton>

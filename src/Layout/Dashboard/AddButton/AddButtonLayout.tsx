@@ -1,18 +1,21 @@
 import React from 'react'
 import './Add_Button.scss'
 import { useTranslation } from 'react-i18next'
-import { usePageState } from '../../../lib/state'
+import { usePageState } from '../../../lib/state mangment/LayoutPagestate'
 
 
 
-const AddButtonLayout = () => {
+const AddButtonLayout = ({haveAddModal}:any) => {
     const { setIsOpenAddModel , setObjectToEdit } = usePageState()
     const [t] = useTranslation();
 
 
     return (
         <div className='Add_Button' onClick={()=>{
-            setIsOpenAddModel()
+            if(haveAddModal){
+                
+                setIsOpenAddModel()
+            }
             setObjectToEdit(null)
 
         }}>

@@ -1,6 +1,6 @@
 import {create} from 'zustand'
 
-interface ModalState {
+interface ModelState {
   isOpenAddModel: boolean;
   isOpenEditModel: boolean;
   objectToEdit: any;
@@ -12,8 +12,8 @@ interface ModalState {
   setObjectToEdit: (data: any) => void;
 }
 
-export const usePageState = create<ModalState>((set) => ({
-  isOpenAddModel: true,
+export const usePageState = create<ModelState>((set) => ({
+  isOpenAddModel: false,
   isOpenEditModel: false,
   objectToEdit: null,
   isThemChanged:false,

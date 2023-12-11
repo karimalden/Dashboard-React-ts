@@ -9,7 +9,7 @@ const Default = ({ name, label, placeholder, isDisabled, onChange, props }: any)
   return (
     <div className="KarimField">
       <label htmlFor={name} className="text">
-        {t(`${label}`)}
+        {t(`${label ?  label : name}`)}
         </label>
       <Form.Item
         hasFeedback
@@ -19,7 +19,7 @@ const Default = ({ name, label, placeholder, isDisabled, onChange, props }: any)
         <Field
           as={Input}
           type="text"
-          placeholder={t(`${placeholder}`)}
+          placeholder={t(`${placeholder ?placeholder  : name}`)}
           name={name}
           disabled={isDisabled}
         //  onChange={onChange ? onChange : handleChange}

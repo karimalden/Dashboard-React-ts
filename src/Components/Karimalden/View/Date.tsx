@@ -1,6 +1,7 @@
 import { Form, DatePicker } from 'antd'
 import React from 'react'
 import useFormField from '../../../Hooks/useFormField';
+import dayjs from 'dayjs';
 
 const Date = ({ name, label, isDisabled, option, isMulti,picker="date" ,props }: any) => {
 
@@ -25,6 +26,8 @@ const Date = ({ name, label, isDisabled, option, isMulti,picker="date" ,props }:
               picker={picker}
                 allowClear
                 className='w-100'
+                // defaultValue={formik.values[name]}
+                
               onChange={onCalendarChange} />
 
 

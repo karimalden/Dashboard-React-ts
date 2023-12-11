@@ -12,7 +12,7 @@ const SelectField = ({ name, label, placeholder, isDisabled,option,isMulti,onCha
   return (
      <div className='KarimField'>
         <label htmlFor={name} className="text">
-        {t(`${label}`)}
+        {t(`${label ?  label : name}`)}
         </label>
         <Form.Item
           hasFeedback
@@ -20,7 +20,7 @@ const SelectField = ({ name, label, placeholder, isDisabled,option,isMulti,onCha
           help={isError ? errorMsg : ""}
         >
           <Select
-          placeholder={t(`${placeholder}`)}
+          placeholder={t(`${placeholder ?placeholder  : name}`)}
             disabled={isDisabled}
             options={option}
             defaultValue={formik.values[name]}

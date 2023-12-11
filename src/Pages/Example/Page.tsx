@@ -16,7 +16,7 @@ function ExamplePage() {
   return (
     <DashBody status={status as QueryStatusEnum} >
       <>
-        <DashHeader title={'Example'}></DashHeader>
+        {/* <DashHeader title={'Example'}></DashHeader> */}
 
         <LyTable
           data={data?.data?.data}
