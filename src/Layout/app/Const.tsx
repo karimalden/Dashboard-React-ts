@@ -10,7 +10,7 @@ export const convert_data_to_select = (array = []) => {
       throw new Error("Expected an array argument")
     }
     let new_array :any = []
-    array.map((e:any) => new_array.push({ value: e?.name, label: e?.id }))
+    array.map((e:any) => new_array.push({ label: e?.name, value: e?.id }))
   
   
     return new_array

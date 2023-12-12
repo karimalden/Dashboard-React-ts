@@ -5,11 +5,11 @@ import useDeleteMutation from "./helper/useDeleteMutation"
 import useUpdateMutation from "./helper/useUpdateMutation"
   
   const API = {
-    GET: `/api/admin/driver/all`,
-    GetOne:`/api/admin/driver/get`,
-    ADD: "/api/admin/Driver/create",
-    UPDATE: "/api/admin/Driver/update",
-    DELETE: "/api/admin/Driver/delete",
+    GET: `/api/all`,
+    GetOne:`/api/get`,
+    ADD: "/api/create",
+    UPDATE: "/api/update",
+    DELETE: "/api/delete",
   };
   
    

@@ -5,6 +5,8 @@ import { Link, useLocation } from 'react-router-dom';
 import { RoutesLinks } from '../../Routes';
 import { useTranslation } from 'react-i18next';
 import KarimLogo from './KarimLogo';
+import { useWindowSize } from '../../Hooks/useWindowSize';
+import Etaxi from './Etaxi';
 
 interface SidebarProps {}
 
@@ -14,7 +16,8 @@ const Sidebar: React.FC<SidebarProps> = () => {
   const [isOpenSide, setIsOpenSide] = useState<boolean>(false);
   const [openDropdown, setOpenDropdown] = useState<number | null>(null);
   const [t] = useTranslation();
-
+  const windowSize = useWindowSize()
+  
   const handleHamburgerMenu = () => {
     setIsOpenSide(true);
     document.getElementById('DashboardLayout_Body')?.classList.add('DashboardLayout_Body_Open');
@@ -31,10 +34,11 @@ const Sidebar: React.FC<SidebarProps> = () => {
   };
 
   return (
-    <div className={isOpenSide ? 'SideBar SideBar_Open' : 'SideBar'}>
+    <div className={isOpenSide ? 'SideBar SideBar_Open' : 'SideBar noOpen'}>
       <div className='SideBar_Top'>
         <div onClick={handleImg}>
-          <KarimLogo />
+         {/* <img src="../Layout/logorayan.png" width={isOpenSide ? 70 : 150} alt="" /> */}
+         <Etaxi/>
         </div>
         <div className='HamburgerMenu' onClick={handleHamburgerMenu}>
           <GiHamburgerMenu />
@@ -49,14 +53,14 @@ const Sidebar: React.FC<SidebarProps> = () => {
             return null;
           }
 
-          if (item?.href) {
+          if (item?.href  ) {
             return (
               <Link
                 to={item?.href}
                 className={isActive ? 'SideBar_Link Active_SideBar_Link' : 'SideBar_Link'}
                 key={index}
               >
-                {item?.icon}
+                    {React.cloneElement(item.icon, { size: 30 })}
                 <div className='Link_Text'>{t(`${item?.name}`)}</div>
               </Link>
             );
@@ -71,7 +75,7 @@ const Sidebar: React.FC<SidebarProps> = () => {
                       : 'SideBar_Link DropDown'
                   }
                 >
-                  <div>{item?.icon}</div>
+                    {React.cloneElement(item.icon, { size: 30 })}
                   <div className='DropDown_Text'>{t(`${item?.name}`)}</div>
                   <div className='DropDown_Svg'>{isDropdownOpen ? <FaAngleDown /> : <FaAngleRight />}</div>
                 </div>
@@ -80,7 +84,7 @@ const Sidebar: React.FC<SidebarProps> = () => {
                     if (child?.href) {
                       return (
                         <Link to={child?.href} className={'SideBar_Link'} key={childIndex}>
-                          {child?.icon}
+                    {React.cloneElement(child.icon, { size: 30 })}
                           <div className='Link_Text'>{t(`${child?.name}`)}</div>
                         </Link>
                       );

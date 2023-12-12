@@ -1,0 +1,16 @@
+.print_button{
+    border: 2px solid var(--primary);
+    background-color: var(--primary);
+    border-radius: 0.5vw;
+    padding:.61vw 1.6vw;
+    font-size: 1vw;
+    display: flex; justify-content: center; align-items: center;
+    box-shadow: 2px 2px 7px 0 var(--primary);
+    margin-right: -770px !important;
+    text-transform: capitalize;
+    font-weight: 700;
+    &:hover{
+            background-color:var(--primary);
+            border: 2px solid var(--primary);
+        }
+}

@@ -43,3 +43,11 @@ input:-webkit-autofill:active{
       background: var(--primary);
     }
 }
+
+.text{
+  color: var(--text);
+}
+
+input:disabled{
+  color: var(--text) !important;
+}

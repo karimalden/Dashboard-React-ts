@@ -1,15 +1,15 @@
 
 /////  Layout
 .DashboardLayout {
-    color: var(--text); background: var(--bg);
+    color: var(--text); background: var(--bg2);
     width: 100%;
     background-size: cover;
     background-position: center;
     min-height: 100vh;
     display: flex; justify-content: center; align-items: center;
     .DashboardLayout_Cover{
-        min-height: 96vh;
-        width: 98vw;
+        min-height: 100vh;
+        width: 100vw;
         border-radius: 20px;
       
       }
@@ -77,6 +77,11 @@ background: var(--bg);
     display: flex; align-items: center ; justify-content: space-between;
     margin-bottom: 20px;
 
+    h1{
+        font-size: 30px;
+        font-weight: 600;
+        
+    }
 }
 .PrimaryColor{
     margin-inline: 10px;
@@ -132,11 +137,16 @@ background: var(--bg);
 
     
     .glass{
+        .Layout_Children{
+            max-height: 500px;
+            overflow-y: auto;
+            overflow-x: hidden
+        }
         .modal {  @include GlassModeBG; }
         .DashboardLayout {
            
             background-image: url("../../../public/Layout/mac.webp");
-    
+                max-height: 200px;
             
         }
         .modal-content{
@@ -150,8 +160,10 @@ background: var(--bg);
             
             }
             .LayoutBody{
-                overflow-y: scroll;
+                // overflow-y: scroll;
                 height: 400px;
+                                overflow: hidden
+
             }
 
     ::-webkit-scrollbar { min-width: 15px; width: 100%; } 
@@ -225,6 +237,25 @@ background: var(--bg);
             backdrop-filter: blur(24px);
            }
     }
+    .sc-bdvvtL .sc-hGPBjI .sc-pVTFL{
+ background-color:transparent;
+ color:var(--text);
+}
+.react-tabs__tab-panel--selected .KarimField .ant-input-affix-wrapper,.modal-body .KarimField .ant-input-affix-wrapper{
+ background-color:transparent;
+}
+
+/* Input */
+.react-tabs__tab-panel--selected .KarimField input[type=text],.modal-body .KarimField input{
+ background-color:transparent;
+ color:var(--text)!important;
+ &::placeholder{
+    color: var(--text);
+ }
+}
+
+
+
         }
         
          .ViewPage{
@@ -237,15 +268,15 @@ background: var(--bg);
                 .card-title{
                     font-size: 2vw;
                 }
-                button{
-                    background: var(--primary) ;
-                    color: var(--bg);
-                    font-weight: bold;
-                    outline: none;
-                    border: none;
-                    min-width: 100px;
-                    max-height: 40px;
-                }
+                    button{
+                        background: var(--primary) ;
+                        color: var(--bg);
+                        font-weight: bold;
+                        outline: none;
+                        border: none;
+                        min-width: 100px;
+                        max-height: 40px;
+                    }
             }
             .react-tabs__tab-list{
                 z-index: 1;
@@ -269,3 +300,44 @@ background: var(--bg);
         }
      
     
+        .react-tabs__tab:focus{
+            // background-color: red !important;
+
+            all: unset;
+              border-top: none; border-left: none; border-right: none;
+                border-bottom: 4px solid var(--primary);
+                color: var(--primary);
+                z-index: 99999;
+                background: var(--bg2);
+                  min-width: 100px;
+
+                flex: 1;
+                color: var(--text);
+                    max-height: 40px;
+
+        }
+
+
+        .ant-input-group-wrapper .ant-input-wrapper .ant-input-affix-wrapper{
+ background-color:var(--bg) !important;
+ color: var(--text) !important;
+}
+
+/* Input */
+.ant-input-wrapper .ant-input-affix-wrapper input[type=text]{
+ background-color:var(--bg) !important;
+  color: var(--text) !important;
+  &::placeholder{
+     color: var(--text) !important;
+  }
+}
+
+/* Warning */
+#root div .warning{
+ color:var(--secondary);
+}
+
+/* Content Division */
+#root .title-section p{
+ color:var(--secondary);
+}

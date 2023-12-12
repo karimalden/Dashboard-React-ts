@@ -37,7 +37,7 @@ function DriverPage() {
         <SearchField />
       </DashHeader>
 
-      {<LyTable
+      {/* {<LyTable
         data={data?.data}
         isLoading={false}
         columns={column}
@@ -47,7 +47,7 @@ function DriverPage() {
         expandableRowsComponent={MyExpandableComponent}
 
       />
-      }
+      } */}
 
     </DashBody>
   )

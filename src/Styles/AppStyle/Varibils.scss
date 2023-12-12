@@ -1,23 +1,23 @@
 :root {
-    --primary:#7a987c;
-    --secondary : #ffd12e;
-    --text: black;
-    --bg: #fafafa;
+    --primary:#fcb04f ;
+    --secondary : #304a7e;
+    --text: #565656;
+    --bg: #ffffff;
     --bg2:  #f8f8f8;
     --shadow: rgba(0, 0, 0, 0.15);
     --gray : rgb(207, 210, 214);
-    --linear : linear-gradient(118deg, #597f5c, rgba(89, 127, 92, 0.7))
+    --linear : linear-gradient(118deg, #fcb04f, #f78c3f)
 }
 
 :root:has(.dark) {
-    --primary: #7a987c;     
-    --secondary: #ffd12e;   
+    --primary: #fcb04f ;     
+    --secondary: #304a7e;   
     --text: #ffffff;        
     --bg: #1f1f1f;          
     --bg2: #2c2c2c;         
     --shadow: rgba(255, 255, 255, 0.15); 
     --gray: #a0aec0;  
-    --linear : linear-gradient(118deg, #597f5c, rgba(89, 127, 92, 0.7))
+    --linear : linear-gradient(118deg, #fcb04f, #f78c3f)
 
 
 }

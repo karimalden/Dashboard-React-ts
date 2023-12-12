@@ -8,10 +8,10 @@
     background: var(--bg);
     margin-top: 20px;
     @include Shadow;
-    border-radius: 5px;
- .Header_Left{
+    .Header_Left{
     @include Flex;
     gap: 5px;
+     border-radius: 5px;
     padding-inline: 5px;
     color: var(--primary);
     font-weight: bolder;
@@ -27,7 +27,7 @@
 
 }
 .szh-menu-button{
-    color: var(--primary);
+    color: var(--text);
     background: var(--bg);
     border: none; outline: none;
     padding: .6vw;
@@ -90,4 +90,18 @@
         opacity: .7;
         margin-bottom: 0;
     }
+}
+
+.Header_Left{
+    >*{
+            display: none;
+    }
+}
+@media screen and (max-width: 700px) {
+
+.Header_Left{
+    >*{
+            display: block;
+    }
+}
 }

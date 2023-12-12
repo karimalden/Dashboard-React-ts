@@ -1,6 +1,7 @@
 
 
 .SideBar {
+    z-index: 9999;
     display: flex;
     flex-direction: column;
     width: 260px;
@@ -10,13 +11,27 @@
     transition: .3s ease-in-out;
 @include Shadow;
 overflow-y: auto;
+overflow-x: hidden;
 &::-webkit-scrollbar {
+  width: 7px; 
+    cursor: pointer;
+
+}
+
+&::-webkit-scrollbar-thumb {
+  background-color: transparent;   
+  border-radius: 10px;
+  cursor: pointer;
+}
+&:hover{
+    &::-webkit-scrollbar {
   width: 7px; 
 }
 
 &::-webkit-scrollbar-thumb {
   background-color: var(--primary);   
   border-radius: 10px;
+}
 }
 
 }
@@ -27,7 +42,7 @@ overflow-y: auto;
     color: var(--primary);
     z-index: 9999999;
     img{
-        margin-inline: 70px;
+        margin-inline: 10px;
     }
     .HamburgerMenu{
         z-index: 999999999999999;
@@ -50,7 +65,7 @@ overflow-y: auto;
 
 .SideBar_Link {
 
-    color: var(--primary);
+    color: var(--text);
     display: flex;
     align-items: center;
     gap: 10px;
@@ -60,8 +75,9 @@ overflow-y: auto;
     height: 45px;
     border-radius: 10px;
     margin-bottom: 10px;
-    font-weight: normal;
+    font-weight: bold;
     margin-left: 15px;
+    text-wrap: nowrap;
     
 
     &:hover{
@@ -80,12 +96,17 @@ overflow-y: auto;
             
         }
     }
+   .DropDown_Svg svg{
+ color:var(--text);
+}
+
+
 
     svg {
         padding: 5px;
         border-radius: 10px;
         // background-color: var(--bg2);
-        color: var(--primary);
+        color: var(--secondary);
         margin-left: 10px;
         
         font-size: 30px;
@@ -170,8 +191,8 @@ overflow-y: auto;
 
 .DropDown_Text{
    width: 100px;
- text-overflow: ellipsis;
- overflow: hidden;
+//  text-overflow: ellipsis;
+//  overflow: hidden;
  margin-right: 30px;
 }
 
@@ -207,3 +228,74 @@ overflow-y: auto;
           }
       }
       
+      
+
+   
+  
+         .SideBar_Open{
+.Etaxi{
+        width: 60px;
+        height: 30px;
+        margin-inline: 40px;
+      }
+      }
+          .noOpen{
+.Etaxi{
+        width: 90px;
+        height:30px;
+        margin-inline: 40px;
+      }
+      }
+
+@media screen and (max-width: 700px) {
+    .out_Sidebar{
+.SideBar_Open,.noOpen{
+    display: none;
+    // transform: translateX(-100px);
+}
+    }
+
+.DashboardLayout_Body_Open,.DashboardLayout .DashboardLayout_Body{
+    left: 30px !important;
+    width : calc(100% - 60px)  !important;
+}   
+}
+
+
+
+
+.ant-drawer-left .ant-drawer-wrapper-body .ant-drawer-header{
+ display:none;
+}
+
+/* Ant drawer body */
+.ant-drawer-left .ant-drawer-wrapper-body .ant-drawer-body{
+ padding-left:0px;
+ padding-right:0px;
+ padding-top:0px;
+ padding-bottom:0px;
+ background: var(--bg);
+}
+
+
+.ant-drawer-left{
+    
+    .SideBar_Top{
+        display: none;
+    }
+    .ant-drawer-body div .RoutesLinks{  
+ margin-top:27px;
+}
+}
+
+
+.ant-drawer-left .ant-drawer-content{
+    
+             @include GlassModeCover;
+            // @include GlassModeBG;
+            color: var(--primary);
+            overflow-x: hidden;
+
+
+}
+

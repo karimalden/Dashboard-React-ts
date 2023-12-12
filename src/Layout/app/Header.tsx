@@ -8,48 +8,66 @@ import '@szhsin/react-menu/dist/transitions/slide.css';
 import Theme from '../../Components/Utils/Theme';
 import { TOKEN_KEY } from '../../config/AppKey';
 import { useNavigate } from 'react-router-dom';
+import useAuthState from '../../lib/state mangment/AuthState';
+import { GiHamburgerMenu } from 'react-icons/gi';
+import WithDrawer from './WithDrawer';
+import Sidebar from './SideBar';
 
-type  TUserData = 
-  {username:string | null,
-   is_super_user:number | undefined
-   }
+type TUserData =
+  {
+    username: string | null,
+    role: string | null 
+  }
 
 
-const Header = () => {  
+const Header = () => {
+
+
+  const [t] = useTranslation();
+  const navigate = useNavigate()
+
+  const { logout , user} = useAuthState()
+  const handelClick = () => {
+    logout()
+    navigate('/auth', { replace: true })
+  }
 
   
- const UserData:TUserData = {username:null,is_super_user:0}
- const [t] = useTranslation();
- const navigate = useNavigate()
-
- const handelClick = ()=>{
-
-  localStorage.removeItem(TOKEN_KEY)
-  navigate('/auth' , {replace:true})
- }
-  return (  
+  
+  return (
     <div className='Header'>
-      <div className='Header_Left'> </div>
+      <div className='Header_Left'> 
+          <WithDrawer
+    title="Cart Item"
+      button={ 
+          <div className="Cart_Icon">
+          <GiHamburgerMenu  />
+          </div>
+    }
+    >
+    <Sidebar/>
+    </WithDrawer>
+      </div>
       <div className='Header_Right'>
-        <Theme/>
-<Translate/>
-<Menu menuButton={<MenuButton>
-  
-  <div className='User_Pro'>
-       <div className='User_info'>
-        <h6>{UserData?.username ?? t("unknown")}</h6>
-        <p> {UserData?.is_super_user === 1  ? t("super admin") : t("admin") }   </p>
-       </div>
-        <img className='UNK_User' src={UserImageURL} alt='' width={40} height={40} />
+        <Theme />
+        <Translate />
+        <Menu menuButton={<MenuButton>
 
-        </div>
-</MenuButton>} transition>
-      <MenuItem onClick={handelClick}>{t("Log Out")}</MenuItem>
-      
-    </Menu>
-    
-      
-        
+          <div className='User_Pro'>
+            <div className='User_info'>
+              <h6>{user?.full_name}</h6>
+              <p> {user?.role_type}   </p>
+            </div>
+            <img className='UNK_User' src={UserImageURL} alt='' width={40} height={40} />
+
+          </div>
+        </MenuButton>} transition>
+          <MenuItem onClick={handelClick}>{t("Log Out")}</MenuItem>
+
+        </Menu>
+
+
+
       </div>
     </div>
   )

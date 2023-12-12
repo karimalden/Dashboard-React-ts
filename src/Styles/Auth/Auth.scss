@@ -20,6 +20,7 @@
         display: flex;
         justify-content: center; align-items: center;
         height: 100%;
+        width: 30vw;
     }
     .Left_Col{
         background-color: #edf4f4;
@@ -40,12 +41,61 @@
     .Reserved{
         transform:translatex(15px) translatey(44px);
     }
+    .LoginForm{
+        .Logo{
+            display: none;
+        }
+    }
     @media screen and (max-width: 800px)  {
         .Left_Col{
 display: none;    
         }
+      
+         .LoginForm{
+        .Logo{
+            // position: absolute;
+            display: block;
+            width: 150px;
+            transform: translate(80px ,-40px);
+            
+        }
+    }
         .Login_H4{
             text-align: center ;
         }
+         .Right_Col{
+        padding-inline: 30px;
+        display: flex;
+        justify-content: center; align-items: center;
+        width: 400px;
+        height: fit-content;
     }
+    .In_Auth{
+    
+        height: 550px !important;
+
+    }   
+
+    
+    }
+
+    @media screen and (max-width: 400px)  {
+     .LoginForm{
+        .Logo{
+            // position: absolute;
+            display: block;
+            width: 120px;
+            transform: translate(50px ,-20px);
+            
+        }
+    }
+         .Right_Col{
+        padding-inline: 30px;
+        display: flex;
+        justify-content: center; align-items: center;
+        width: 300px !important;
+    }
+    }
+
+
 }

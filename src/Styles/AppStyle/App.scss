@@ -1,6 +1,6 @@
 html,body {
-    background: var(--bg)
-
+    background: var(--bg2)
+    
 }
 
 *{
@@ -58,4 +58,14 @@ svg {
             margin-inline:30px;
         }
     }
+}
+
+.lock_icon{
+    color: var(--primary);
+    margin-left: 7px;
+}
+
+
+.primary {
+    color: var(--primary) !important;
 }

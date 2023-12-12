@@ -14,6 +14,6 @@ export  interface FormTableState {
     option?: any;
     isMulti?: boolean;
     Disabled?: boolean;
-    group ? : boolean
-    props ? : any
+    group ? : boolean;
+    dir?:'rtl' | 'ltr'
   };
